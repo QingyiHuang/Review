@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>input</title>
+<style>
+	tr{
+		height: 40px;
+	}
+	
+</style>
+
+</head>
+<body>
+	<table width="600" border="0" cellpadding="0" cellspacing="0">
+		<caption><h4 style="color: pink;font-size: 25px;">青春不常在，抓紧谈恋爱</h4></caption>
+		<tr>
+			<td>所在地区</td>
+			<td><input type="text" style="color:#ccc" value="重庆"></td>
+		</tr>
+		<tr>
+			<td>
+				<label for="ddd">用户名</label>
+			</td>
+			<td><input id="ddd" type="text" value=""></td>
+		</tr>
+		<tr>
+			<td>
+				<label for="sss">密码</label>
+			</td>
+			<td><input id="sss" type="password" maxlength="10"></td>
+		</tr>
+		<tr>
+			<td>性别//name=“sex”</td>
+			<td>
+				男<input type="radio" name="sex">
+				女<input type="radio" name="sex">
+			</td>
+		</tr>
+		<tr>
+			<td>你喜欢的类型</td>
+			<td>
+				妩媚<input type="checkbox" name="human" checked="checked">
+				鲜肉<input type="checkbox" name="human">
+				气质<input type="checkbox" name="human">
+			</td>
+		</tr>
+		<tr>
+			<td>上传头像</td>
+			<td><input type="file"></td>
+		</tr>
+		<tr>
+			<td>自我介绍</td>
+			<td>
+				<textarea name="" id="" cols="30" rows="10" style="color: #ccc"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type="submit" value="register">
+				<input type="reset" value="清空">
+				<input type="image" src="./images/button.jpg">
+			</td>
+		</tr>
+		<tr>
+			<td>下拉菜单</td>
+			<td>
+				<select name="" id="">
+					<option value="">选择年份</option>
+					<option value="">1990</option>
+					<option value="">1991</option>
+					<option value="">1992</option>
+					<option value="">1993</option>
+					<option value="">1995</option>
+					<option value="" selected="selected">1997</option>
+				</select>
+				<select name="" id="">
+					<option value="">选择月份</option>
+					<option value="" selected="selected">1</option>
+					<option value="">2</option>
+					<option value="">3</option>
+					<option value="">4</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

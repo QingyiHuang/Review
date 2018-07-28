@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+div p{
+    color: deeppink;
+}
+ul li{
+    color: deeppink;
+}
+ul li>a{
+    color: darkorange;
+}
+</style>
+</head>
+<body>
+    <div>多类选择时，样式根据css中书写顺序而不是引用css的顺序</div>
+    <div>我是将小白</div>
+    <div>我是将小白
+        <p>我是第1个p</p></div>
+    <div>我是将小白</div>
+    <div>我是将小白
+        <p>我是第2个p</p></div>
+    <div>我是将小白
+        <p>我是第3个p</p></div>
+    <div>我是将小白
+        <p>我是第4个p</p></div>
+    <div>我是将小白</div>
+    <ul>
+        <li>111111</li>
+        <li>111111</li>
+        <li>111111</li>
+    </ul>
+    <ul>
+        <li>
+            <a href="##">li的子代 选择器ul li >a</a>
+            <div>
+                <a href="##">ul li div a</a>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>

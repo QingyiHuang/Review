@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    table,td{
+        border-collapse: collapse;/*边框合并辅助以cellspacing和cellpadding位0*/
+    }
+    .div1{
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+    }
+    .div2{
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+    }    
+    body>a{
+        height: 35px;
+        display: inline-block;
+        text-decoration: none;
+        line-height: 35px;
+        font-family: 16px;
+        color: #fff;
+        background: rgba(0,0,0, 0.8);
+        /*padding-left: 10px;
+        padding-right: 10px;*/
+        padding: 0px 10px;/*上下，左右，匹配 和border一样*/
+        /*三值是上，左右，下*/
+        /*四值是上右下左*/
+    }
+    .f{
+        width: 100px;
+        height: 100px;
+        background: black;
+        padding: 100px;
+        /*box-sizing: border-box; way2*/
+    }/*盒子宽度border-left +padding-left+width+padding-right+border-right*/
+    .s{
+        width: 100px;
+        height: 100px;
+        background: deeppink;
+    }
+
+    .news{
+        margin: 0 auto;
+        width: 376px;
+        height: 265px;
+        border: 2px solid #ccc;
+        padding: 20px 16px 0;/*上 左右 下*/
+    }
+    .news h2{
+        border-bottom: 1px solid black;
+        font-size: 20px;
+        padding-bottom: 5px;
+        margin-bottom: 12px;/*让title 与ul12px远*/
+    }
+    li{
+        list-style: none;/*取消li前小点*/
+    }
+    .news a{
+        text-decoration: none;
+        font-size: 12px;
+        color: gray;
+    }
+    .news a:hover{
+        text-decoration: underline;
+    }
+    .news ul li{
+        height: 38px;
+        line-height: 38px;
+        padding-left: 20px;/*text-indent:2em*/
+        border-bottom: 1px dashed black;
+    }
+    body{
+        background: #eee;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="div1">div1h和下面一样不过设置了padding，被撑开</div>
+    <div class="div2">div2</div>
+    <a href="##">首页</a>
+    <a href="#">这一个名字很长的导航</a>
+    <a href="#">这一个名</a>
+    <a href="#">撒打算</a>
+    <h4>father and son</h4>
+    <div class="f">
+        <div class="s"></div>
+    </div>
+
+    <h4 style="text-align: center">最新文章</h4>
+    <div class="news">
+        <h2>最新文章/NewA rticle</h2>
+        <ul>
+            <li><a href="##">背景找平咋滴敬爱哦手机</a></li>
+            <li><a href="##">背景找平咋滴敬爱哦手机</a></li>
+            <li><a href="##">背景找平咋滴敬爱哦手机</a></li>
+            <li><a href="##">背景找平咋滴敬爱哦手机</a></li>
+            <li><a href="##">背景找平咋滴敬爱哦手机</a></li>
+        </ul>
+    </div>
+</body>
+</html>

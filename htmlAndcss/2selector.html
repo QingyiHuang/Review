@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择器</title>
+<style>
+div.boom{/*交集选择器*/
+    color: deeppink;
+}
+.box2 span,.box2 p,.box2 div{/*并集选择器就是逗号*/
+    color: orange;
+}
+a{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+a:link{/*未访问*/
+    color: orange;
+}
+a:hover{/*hover*/
+    color:#666;
+}
+a:active{/*激活*/
+    color: mediumvioletred;
+}
+a:visited{/*过去式*/
+    color: mediumblue;
+}
+</style>
+
+</head>
+<body>
+    <div class="boom">
+        <p>hello</p>
+    </div>
+    <div>21</div>
+    <div>342</div>
+    <span>span</span>
+    <span>span</span>
+    <span>span</span>
+    <div>324</div>
+    <div>23r</div>
+    <div>人</div>
+    <p class="boom">asd</p>
+    <p>asd</p>
+    <p>asd</p>
+    <p>asd</p>
+    <div class="box2">
+
+        <span>span</span>
+        <p>p</p>
+        <div>div</div>
+    </div>
+    <a href="##">我是一个平凡的人</a>
+    <input type="radio" name="" id="">
+    
+</body>
+</html>

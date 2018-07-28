@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+    /*行内块，行内元素可以使用  h p中的文字居中，标签本身就是文字*/
+    /*文字里不能放块标签*/
+    /*行内元素只能容纳文本内容或者其他行内元素*/
+    /*a标签，a里面可以放块级元素，比较特殊 */
+    /*行高，基线到基线就是行高*/
+    /*顶线中线基线底线*/
+    /*span是行内元素，img是行内块*/
+    /*css书写，样式冲突1以最后为准，此为层叠性，样式冲突则不层叠*/
+    /*子标签会继承父标签某些样式，此为继承性*/
+    /*权重会叠加*/
+    .father{
+        color: deeppink!important;/*权重无限大*/
+    }
+</style>
+
+</head>
+<body>
+    <div>
+        <span>sad</span>
+        <span>sad</span>
+        <span class="father">sad</span>
+    </div>
+</body>
+</html>
