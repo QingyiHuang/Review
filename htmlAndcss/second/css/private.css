@@ -1,0 +1,172 @@
+.clearfix:after,.clearfix:before{
+    content: "";
+    display: table;
+}
+.clearfix:after{
+    clear: both;
+}
+.clearfix{
+    *zoom: 1;
+}
+.public_container{
+    width: 1200px;
+    margin: 0 auto;
+}
+.header{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background: rgba(0, 0,0, 0.2);
+}
+.inner-head{
+    background: rgba(0, 0,0,0.4);
+    height: 80px;
+    width: 1200px;
+    margin: 0 auto;
+}
+.inner-head:hover{
+    background: rgba(0, 0,0,0.5);
+}
+.inner-head .log{
+    float: left;
+    line-height: 80px;
+    padding-left: 50px;
+
+}
+.inner-head .log a{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.inner-head .nav{
+    float: right;
+    line-height: 80px;/*行高会继承*/
+}
+.inner-head .nav li{
+    float: left;
+    margin: 0 20px;
+}
+.nav li a{
+    color: #fff;
+}
+.nav li a:hover{
+    color:#2288f6;
+}
+/*banner*/
+.banner{
+height: 500px;
+width: 100%;
+background: url(../img/banner.jpg);
+background-position: top center;
+background-repeat: no-repeat;
+}
+.service{
+    height: 660px;
+    margin-top: 50px;
+}
+.hd{
+    margin: 0 25px;/*没定宽，自动继承父亲 不会超出*/
+    border-top: 2px solid grey;
+}
+.hd .s-hd{
+    width: 180px;
+    height: 50px;
+    background: #eee;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    color: grey;
+    margin-top: -24px;
+    margin-bottom: 15px;
+}
+.hd>p{
+    color: grey;
+    font-family: sans-serif;
+    font-size: 16px;
+    text-align: center;
+    line-height: 26px;
+}
+.bd{
+    margin-top: 40px;
+    overflow: hidden;
+}
+.info{
+    width: 340px;
+    height: 510px;
+    background: grey;
+    float: left;
+}
+.info_middle{
+    margin: 0 90px;
+}
+.case_wrap{
+    margin-top:10px;
+    width: 100%;
+    background: #fafafa;
+    padding-top:20px;
+    overflow: hidden;
+}
+.case{
+    margin-top:80px;
+}
+.lunbo ul{
+
+}
+.lunbo ul li{
+    height: 253px;
+    width: 385px;
+    float: left;
+    position: relative;
+}
+.li_cen{
+    margin: 0 22px;
+}
+.inner-div{
+    position: absolute;
+    height: 50px;
+    width: 385px;
+    background: rgba(0, 0,0,0.5);
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+}
+.mask{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0,0,0.3) url(../img/1.jpg) center no-repeat;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.lunbo li:hover .mask{
+    display: block;
+    cursor: pointer;
+}
+.footer{
+    margin-top: 100px;
+    height: 300px;
+    background: black;
+    overflow: hidden;
+    color: #fff;
+}
+.in_f{
+    margin-top: 140px;
+    text-align: center;
+    font-size: 24px;
+    
+}
+.in_f a{
+    text-decoration: none;
+    color: #fff;
+    padding: 0 12px;
+}
+.footer p{
+    margin-top: 16px;
+    text-align: center;
+}

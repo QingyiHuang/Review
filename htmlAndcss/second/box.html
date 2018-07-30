@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .head{
+        width: 400px;
+        height: 200px;
+        background: deeppink;
+        text-align: center;
+        margin: 0 auto;/*上下外边距0，左右auto*/
+        /*margin-left:auto; 左边充满，盒子抵住右边 auto就是充满*/
+    }
+    /*外边距塌陷只发生在垂直方向*/
+    .father{
+        width: 200px;
+        height: 200px;
+        background: cadetblue;
+        /*way1*/
+        /*border: 1px solid red;记得减去边框长度，否则现在是202px*/
+        overflow: hidden;
+    }
+    .son{
+        width: 50px;
+        height: 50px;
+        background: deeppink;
+        margin-top:50px;/*与父元素一起外面局--这就是塌陷，解决方法x3 给父元素边框 给父元素设置padding-top 父元素设置overflow hidden*/
+    }
+    .f{
+        width: 200px;
+        height: 200px;
+        background: chartreuse;
+
+    }
+    .s{/*子盒子宽度与父盒子相同，因为没设宽度，设置padding，不会撑开*//*子盒子可以不用宽度*/
+        padding-left: 100px;
+    }
+</style>
+
+</head>
+<body>
+    <div class="head">
+        hello
+    </div>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+
+    <div class="f">
+        <div class="s">sadas</div>
+    </div>
+</body>
+</html>

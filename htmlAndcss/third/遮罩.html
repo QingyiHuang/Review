@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    a{
+        display: block;
+        width: 272px;
+        height: 299px;
+        position: relative;
+    }
+    a:hover .mask{
+        display: block;
+    }
+    .mask{
+        width: 272px;
+        height: 299px;
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+    .mask img{
+        position: absolute;
+        left: 50%;
+        margin-left: -10px;
+        top: 50%;
+        margin-top: -10px;
+    }
+    /*cursor*/
+    h4:hover{
+        /*pointer  move text default*/
+        cursor: move;
+    }
+    input{
+        outline: none;/*取消轮廓线*/
+        border: 1px solid red;
+        width: 300px;
+        height: 26px;
+        background: url(../images/1.jpg) no-repeat right center;
+    }
+    textarea{
+        /*禁止拖拽*/
+        resize:none;
+        outline: none;
+        border: 1px solid deeppink;
+    }
+    </style>
+</head>
+<body>
+    <a href="#">
+        <img src="../images/3.jpg" alt="">
+        <div class="mask">
+            <img src="../images/1.jpg" alt="">
+        </div>
+    </a>
+    <h4>大a给relative a和图片大小相同然后遮罩 大小与其相同，遮罩div可以设置背景图片no-reat 或者，直接在 div里面添加img</h4>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+</body>
+</html>

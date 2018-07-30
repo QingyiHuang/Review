@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 400px;
+            border: 1px solid deeppink;
+            
+        }
+        img{
+            vertical-align: bottom;/*img table 针对行内块*/
+            /*display:block*/ 
+            /*图片下面留线是因为图片底部默认与文字基线对齐，所以留白，
+            需要与底线对齐，两种方式*/
+            /*一种温柔，一种暴力*/
+            /*控制图片与文字对齐*/
+        }
+        .div1 p{
+            display: inline;
+        }
+        .div2 p{
+            display: inline-block;
+            vertical-align: center;
+        }
+
+        .dd{
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .gg{
+            white-space: nowrap;
+            text-overflow: ellipsis;/*显示省略号*/
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <img src="../images/3.jpg" alt="">
+        <p>saifhsiodfjsidfj</p>
+    </div>
+    <div class="div2">
+        <p>jsdisjdfnkjxcnvkjn</p>
+    </div>
+    
+    <div class="dd">asfasfnsdfknsjfnskjndfkjsndfkjnsfsdfdsgdgdfgdfgdfgdfgdfgdfgdf</div>
+    <div class="dd">asfasfnsdfknsjfnskjndfkjsndfkjnsfsdfdsgdgdfgdfgdfgdfgdfgdfgdf</div>
+    <div class="dd">asfasfnsdfknsjfnskjndfkjsndfkjnsfsdfdsgdgdfgdfgdfgdfgdfgdfgdf</div>
+    <div class="gg">adsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</div>
+    <div class="gg">adsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</div>
+    <div class="gg">adsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</div>
+</body>
+</html>

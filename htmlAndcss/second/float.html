@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    .up{
+        width: 300px;
+        height: 300px;
+        background: deeppink;
+        float:left;/*upy已经浮动走了，然后down没有 就放在了上面*/
+        /*为什么不用display-inlinebolock 因为有缝隙 */
+        /*浮动可以让元素默认转换为行内块元素*/
+    }
+    .down{
+        width: 400px;
+        height: 400px;
+        background: darkviolet;
+        float: right;
+    }
+    .all{
+        margin: 500px auto;
+    }
+    .one{
+        width: 100px;
+        height: 100px;
+        background: darkviolet;
+    }
+    .two{
+        width: 100px;
+        height: 100px;
+        background: indianred;
+    }
+    </style>
+</head>
+<body>
+    <div class="up"></div>
+    <div class="down"></div>
+
+    <div class="all">
+        <div class="one"></div>
+        <div class="two"></div>
+    </div>
+
+</body>
+</html>
