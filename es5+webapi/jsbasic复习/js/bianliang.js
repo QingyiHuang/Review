@@ -1,3 +1,4 @@
+﻿
 window.onload=function(){
     /*js中，字符串类型的值都用双引号或者单引号 */
     /**
