@@ -1,1 +1,1 @@
-![](C:\Users\黄卿怡\Desktop\es6\es5+webapi\jsbasic复习\堆栈，变量名别名引用.png)
+![https://github.com/QingyiHuang/Review/blob/master/es5%2Bwebapi/jsbasic%E5%A4%8D%E4%B9%A0/%E5%A0%86%E6%A0%88%EF%BC%8C%E5%8F%98%E9%87%8F%E5%90%8D%E5%88%AB%E5%90%8D%E5%BC%95%E7%94%A8.png]()
