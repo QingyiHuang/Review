@@ -50,4 +50,5 @@ window.onload=function(){
       * 复杂类型 引用类型 object  //对象在堆上存储，地址在栈上 就是var  
       * 空类型 undefined null
       */
+
 }
