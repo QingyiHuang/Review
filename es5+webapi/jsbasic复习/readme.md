@@ -1,0 +1,1 @@
+![](C:\Users\黄卿怡\Desktop\es6\es5+webapi\jsbasic复习\堆栈，变量名别名引用.png)
