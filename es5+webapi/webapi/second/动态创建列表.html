@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 300px;
+        margin: 0 auto;
+    }
+    input{
+        width: 100px;
+        height: 50px;
+    }
+    ul li{
+        list-style: none;
+    }
+    </style>
+</head>
+<body>
+    <input type="button" value="创建" id="btn">
+    <div class="dv"></div>
+    <script>
+    var kungfu=["降龙十八掌","化骨绵掌","美少女战士","radio"];
+    var btn=document.querySelector("#btn");
+    var dv=document.querySelector(".dv");
+    btn.onclick=function(){
+        //创建ul 把ul立刻加入刀父级元素中
+        var ulObj=document.createElement("ul");
+        dv.appendChild(ulObj);
+        //li动态加入到ul中 
+        for(let key in kungfu){
+            var liobj=document.createElement("li");//即创即用 单创
+            liobj.innerText=kungfu[key];
+            ulObj.appendChild(liobj);
+            //li event
+            liobj.onmouseover=overHandle;
+            liobj.onmouseout=outHandle;
+        }
+    };
+    function overHandle(){
+        this.style.backgroundColor="red";
+    }
+    function outHandle(){
+        this.style.backgroundColor="#fff";
+    }
+    </script>
+</body>
+</html>

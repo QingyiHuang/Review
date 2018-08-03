@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    img{
+        width: 100px;
+        height: 100px;
+    }
+    </style>
+</head>
+<body>
+    <input type="button" value="还好">
+    <input type="button" value="还好">
+    <input type="button" value="还好">
+    <input type="button" value="还好">
+    <input type="button" value="还好">
+    <input type="button" value="还好">
+    <input type="button" value="还好">
+    <input type="button" value="还好">
+    <img src="" alt="">
+
+    
+    <script>
+        var btns=document.querySelectorAll("input");
+        for(let key in btns){
+            btns[key].onmouseover=function(){
+                for(let j in btns){
+                    btns[j].value="还好";
+                }
+                this.value="怀孕了";
+            }
+        }
+        var imgObj=document.querySelector("img");
+        imgObj.src="img/123.png";
+        imgObj.onclick=function(){
+            this.src="img/321.png";
+        }
+    </script>
+</body>
+</html>

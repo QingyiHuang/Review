@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    p::first-line{
+        color: deeppink;
+    }
+    </style>
+</head>
+<body>
+    js分为三个部分
+    EcmaScript标准 js的基本语法
+    dom 文档对象模型
+    bom 浏览器对象模型
+
+    <h4>文档对象模型</h4>
+    <p>文档//////html就是一个文档
+        html就是html文档的根标签
+        html展示数据
+        xml文件没有任何系统标签
+        侧重数据存储
+    </p>
+    <p>html 文档，这个文档看成一个对象，每个标签就是一个对象</p>
+    <p>所有内容都是节点 ：标签 属性 文本</p>
+    <p>元素:标签</p>
+    <p>一个页面即一个文档 document</p>
+
+<!--dddddddddddddddddddddddddddddddddddd-->
+    <input id="btn" type="button" value="出现">
+    <img src="" id="im" alt="">
+<!--dddddddddddddddddddddddddddddddddddd-->
+    <h4 id="h4">你好，我是妖怪</h4>
+    <input id="btn1" type="button" value="修改">
+<!--dddddddddddddddddddddddddddddddddddd-->
+    <a id="lin" href="javascript:;">a标签，用上面修改按钮修改</a>
+
+
+    <script>
+    var btn = document.querySelector("#btn");
+    var im = document.querySelector("#im")
+    function clearImg(){
+        im.src="./img/123.png";
+        im.width="300";
+        im.height="180";
+    }
+
+    btn.onclick=clearImg;//不加括号，否则直接执行
+
+    var btn1 = document.querySelector("#btn1");
+    btn1.onclick = function(){
+        /**
+         * 凡是成对的标签，中间文本内容，设置的时候
+         * 都使用 innerText这个属性的方法
+         * innerHTML可以插入html标签
+         * */
+        document.querySelector("#h4").innerText="<b>这<b>是一个男人";
+        var lin = document.querySelector("#lin");
+        lin.innerText="百度";
+        lin.href="http://www.baidu.com";
+        
+    }
+
+    </script>
+</body>
+</html>

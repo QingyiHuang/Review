@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>美少女战士，守护甜心</p>
+    <p>美少女战士，守护甜心</p>
+    <p>美少女战士，守护甜心</p>
+    <p>美少女战士，守护甜心</p>
+    <p>美少女战士，守护甜心</p>
+    <img src="./img/123.png" alt="问问" title="守护甜心">
+    <button id="btn">button</button>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <script>
+    var btn =document.querySelector("#btn");
+    btn.onclick=function(){
+        /**
+         * document.getElementsByTagName("p");返回值是一个伪数组
+         * 无论获取的是一个标签还是多个标签，最终都是在数组中存储的，所以
+         * 这行代买返回值就是数组
+         * */
+        var p1=document.getElementsByTagName("p");
+
+       //var p1 = document.querySelectorAll("p");
+        for(var key in p1){/*获取到的所有元素，需要遍历*/
+            p1[key].innerText="代表月亮消灭你";
+        }
+
+        var img1=document.querySelector("img");
+        img1.title="美少女战士";
+        
+        var inp=document.getElementsByTagName("input");
+        for(let key in inp){
+            inp[key].value="haha";
+        }
+    }
+    var imgObj = document.querySelector("img");
+    imgObj.onclick=function(){
+        this.width="1000";
+        this.height="800";
+    }
+    </script>
+</body>
+</html>

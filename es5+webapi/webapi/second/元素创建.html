@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="btn">trigger</button>
+        <div class="dv"></div>
+        <button id="btn2">aaaaaa</button>
+        <div></div>
+    </div>
+    <script>
+    /**@argument
+    元素创建：为了提高用户体验
+    元素创建的三种方式
+    1.document.write("标签的代码")--->创建元素有缺陷，在页面加载后
+    这种方式会清空所有内容
+    document.write可以嵌入外部代码内容
+    */
+    /*document.getElementById("btn").onclick=function(){
+        document.write("<button id="+btn+">trigger</button> <p>hahahah</p>");
+    }*/
+
+    /**
+    第二种方式，点击按钮，在div中创建一个P标签   
+     */
+    document.getElementById("btn").onclick=function(){
+        document.getElementsByClassName("dv")[0].innerHTML="<em>床前明月光</em>";
+    }
+    /*console.log(document.children);
+    document.getElementById("btn2").onclick=function(){
+        document.querySelector("div").children[3].innerHTML="<em>床前明月光</em>";
+    }*/
+
+
+    /**@argument
+    第三种方式 document.createElement("biaoqian")
+    把元素追加到父级元素中
+    */
+
+    document.getElementById("btn2").onclick=function(){
+        var pObje=document.createElement("p");
+        pObje.innerText="hello world";
+        //创建后的子元素追加到父级元素中
+        document.querySelector("div").children[3].appendChild(pObje);
+
+    }
+    </script>
+</body>
+</html>

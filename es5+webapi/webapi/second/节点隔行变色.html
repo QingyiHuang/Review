@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="dv">
+            <ul>
+                <li>红烧肉</li>
+                <li>红烧肉</li>
+                <li>红烧肉</li>
+                <li>红烧肉</li>
+                <li>红烧肉</li>
+                <li>红烧肉</li>
+            </ul>
+        </div>
+        <button id=btn>aduhausd</button>
+<script>
+var btn=document.getElementById("btn");
+var ulObj=document.getElementsByTagName("ul");
+btn.onclick=function(){
+    var count=0;//记录有多少个li 毕竟是获取的子节点
+    var nodes=ulObj[0].childNodes;
+    for (let key in nodes){
+        if(nodes[key].nodeType==1&&nodes[key].nodeName=="LI"){
+            
+            nodes[key].style.backgroundColor=count%2==0?"deeppink":"yellow";
+            count++;
+
+            //nodes[key].style.backgroundColor 
+        }
+    }
+}
+
+</script>
+</body>
+</html>

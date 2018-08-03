@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    p::first-letter{/*选中第一个字*/
+        font-size: 30px;
+    }
+    p::first-line{/*第一行*/
+        color:deeppink;
+    }
+    p::selection{/*选中的*/
+        color:#eee;
+        background: darkred;
+    }
+    /*****************************************************/
+    /*:::before :::after其实是两个盒子 inline-block */
+    .div1::before{/*必须带一个属性  content*/
+        content: "我呀";/*important 内容 放在.div1内部最前面*/
+        width: 30px;
+        height: 30px;
+        background: deeppink;
+        display: block;
+    }
+    .div1::after{/*必须带一个属性  content*/
+        content: "20";/*important 内容 放在.div1内部最后面*/
+        width: 30px;
+        height: 30px;
+        background: rgb(206, 155, 15);
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <p>因为《魔道祖师》拍摄的电视剧《陈情令》开机了，所以忍不住又去看了遍《魔道祖师》小说，
+        真的，又把自己给虐哭了，果然年纪越大，这人就越容易伤感，有时候真的看到那些台词就忍不住想哭，这次将那些台词发出来吧。
+            “明月清风晓星尘，傲雪凌霜宋子琛。”晓星尘和宋岚并称。 
+            为遇一人而入红尘，人去我亦去，此身不留尘。
+            生前哪管身后事？浪得几日是几日！我见诸君多有病，料诸君见我、应如是。</p>
+
+        <div class="div1">
+            今年
+        </div>
+</body>
+</html>

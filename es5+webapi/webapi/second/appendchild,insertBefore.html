@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">create</button>
+    <button id="btn2">delete</button>
+    <button id="btn3">deleteall</button>
+    <div>
+
+    </div>
+    <script>
+        /** 
+        insertBefore(插入物，想要插入它前面的element)
+        
+        */
+    var dv=document.querySelector("div");
+    var i=0;
+    document.getElementById("btn").onclick=function(){
+        i++;
+        var obj=document.createElement("button");
+        obj.innerText="btn"+i;
+        dv.insertBefore(obj,dv.firstElementChild);
+    }
+    ///////////////////////////////////////
+    document.getElementById("btn2").onclick=function(){
+        dv.removeChild(dv.firstElementChild);
+    }
+    ////////////////////////////////////////////////
+    document.getElementById("btn3").onclick=function(){
+        /*判断第一个子元素有没有，就删了*/
+        while(dv.firstElementChild){
+            dv.removeChild(dv.firstElementChild);
+        }
+    }
+    </script>
+</body>
+</html>

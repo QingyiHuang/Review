@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="dv">
+                <span>568</span>
+                <p>55</p>
+                <p>55</p>
+                <p>55</p>
+                <ul>before
+                    <li>haha1</li>
+                    <li>haha2</li>
+                    <li>haha3</li>
+                    <li>haha4</li>after
+                </ul>
+        </div>
+        <button id=btn>aduhausd</button>
+<script>
+    //点击按钮，p变色---节点
+    var dv=document.getElementById("dv");
+    var nodes=dv.childNodes;
+    var btn = document.getElementById("btn");
+    btn.onclick =function(){
+            for(let key in nod es){
+            /*nodeType=1标签  2属性  3文本 nodeName的值为大写 */
+            if(nodes[key].nodeType==1&&nodes[key].nodeName=="P"){
+                nodes[key].style.backgroundColor="deeppink";
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div[class]{/*带有class的*/
+        background: pink;
+    }
+    div[class^=t]{/*选出class以t开头*/
+        background: mediumvioletred;
+    }
+    div[class$=v]{/*class 以V结尾*/
+        font-size: 30px;
+    }
+    div[class*=e]{/*通配*/
+        color:forestgreen;
+    }
+    </style>
+</head>
+<body>
+    <div>我要代表月亮消灭你</div>
+    <div>我要代表月亮消灭你</div>
+    <div class="test">我要代表月亮消灭你</div>
+    <div>我要代表月亮消灭你</div>
+    <div class="vvvv">我要代表月亮消灭你</div>
+    <div class="test2">我要代表月亮消灭你</div>
+    <div>我要代表月亮消灭你</div>
+</body>
+</html>

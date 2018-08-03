@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    dt,dd{
+        float: left;
+    }
+    div{
+        width: 300px;
+        margin: 0 auto;
+        border: 1px solid deeppink;
+        overflow: hidden;
+    }
+    dl{
+        overflow: hidden;  
+        height: 50px;  
+    }
+    dt{
+        width: 20px;
+        margin: 15px;
+        text-align: center;
+    }
+    dd{
+        margin-left: 10px;
+        width: 94px;
+        text-align: center;
+        line-height: 50px;
+        border-right: 1px solid black;
+    }
+    dl:hover{
+        cursor: pointer;
+        background: deeppink;
+        color: #fff;
+    }
+    dl:first-child{
+        background: darkblue;
+        color: #fff;
+    }
+    </style>
+    
+</head>
+<body>
+    <!--全勾，和部分勾-->
+    <div>
+        <dl>
+            <dt> <input type="checkbox" name="all" id=""></select> </dt>
+            <dd>菜单</dd>
+            <dd>厨师</dd>
+        </dl>
+        <dl>
+            <dt> <input type="checkbox" name="1" id=""></select> </dt>
+            <dd>红烧牛肉</dd>
+            <dd>牛老师</dd>
+        </dl>
+        <dl>
+            <dt> <input type="checkbox" name="2" id=""></select> </dt>
+            <dd>红烧牛肉</dd>
+            <dd>牛老师</dd>
+        </dl>
+        <dl>
+            <dt> <input type="checkbox" name="3" id=""></select> </dt>
+            <dd>红烧牛肉</dd>
+            <dd>牛老师</dd>
+        </dl>
+        <dl>
+            <dt> <input type="checkbox" name="4" id=""></select> </dt>
+            <dd>红烧牛肉</dd>
+            <dd>牛老师</dd>
+        </dl>
+    </div>
+    <script>
+    var dv=document.querySelector("div");
+    var allSelect = document.getElementsByName("all");
+    var selects=document.querySelectorAll("input");
+    allSelect[0].onclick=function(){
+        for(let key in selects){
+            selects[key].checked=this.checked;//让其他checked值与this的checke共享
+        }
+    };
+    /*每个其他复选框点击，会检测是否满足所有其他复选框全部点击*/
+    for(let key=1;key<selects.length;key++){
+        selects[key].onclick=function(){
+            var flag=true;
+            for(let j=1;j<selects.length;j++){
+                if(selects[j].checked==false){//判断等于是双等
+                    flag=false;
+                    break;//跳出当前循环
+                }
+            }
+            selects[0].checked=flag;
+        }
+    }
+    </script>
+</body>
+</html>

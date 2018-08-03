@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    ul li:hover{
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <p>
+        设置自定义属性:setAttribute("属性名字","属性值");
+        获取自定义属性的值 getAttribute("属性名")
+    </p>
+    <ul>
+        <li score="87">自定义属性</li>
+        <li score="97">自定义属性</li>
+        <li score="57">自定义属性</li>
+        <li score="77">自定义属性</li>
+    </ul>
+    <script>
+    var list =document.querySelectorAll("li");
+    for(let key in list){
+        list[key].onclick=function(){
+            //因.score一个是标签自定义，一个是对象自有，
+            this.innerText+=this.getAttribute("score");
+        }
+    }
+    //在html标签中添加自定义属性，如果想要获取这个属性的值，需要使用
+    //getAttribute("属性名")
+    for(let key in list){
+        //list[key].popo=(key*10+1);这种方式添加，属性在dom对象上
+        list[key].setAttribute("popo",key*10+5);
+        list[key].onclick=function(){
+            this.innerText+=this.getAttribute("popo");
+        }
+    }
+    </script>
+</body>
+</html>

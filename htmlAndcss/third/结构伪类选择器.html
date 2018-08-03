@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+   .ul1 li:first-child{/*名为li的first child*/
+        background: pink;
+    }
+   .ul1 li:last-child{/*名为li的 last child*/
+        background: peru;
+    }
+    .ul1 li:nth-child(3){/*名位li的 nth个child*/
+        background: orangered;
+    }
+
+
+    /** 
+    等价于.ul2 li:nth-child(2n)
+    */
+    .ul2 li:nth-child(even){/*偶数*/ 
+        background: olivedrab;
+    }
+
+    /**
+    等价于 .ul2 li:nth-child(2n+1)
+    */
+    .ul2 li:nth-child(odd){/*奇数s*/
+        background: navy;
+    }
+
+    </style>
+</head>
+<body>
+    <ul class="ul1">
+        <p>li:nth-child()  first-child last-child</p>
+        <li>守护甜心，美少女战士</li>
+        <li>守护甜心，美少女战士</li>
+        <li>守护甜心，美少女战士</li>
+        <li>守护甜心，美少女战士</li>
+        <li>守护甜心，美少女战士</li>
+    </ul>
+    ---------------------------------------------------
+    <ul class="ul2">
+        <p>li:nth-child() odd even</p>
+        <li>代表月亮消灭你</li>
+        <li>代表月亮消灭你</li>
+        <li>代表月亮消灭你</li>
+        <li>代表月亮消灭你</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">多人公用</button>
+    <button id="btn2">222222222</button>
+    <button id="btn3">3333333</button>
+    <div>
+
+    </div>
+    <script>
+    var btn=document.getElementById("btn");
+    /**@argument
+    为元素绑定事件(dom):
+    参数1 事件的类型--事件的名字，没有on
+    参数2  事件的处理函数--函数(命名函数，匿名函数)
+    参数3 boolean 目前就写false
+    addEventListener 中 操作不加 on前缀
+    //为同一个元素绑定多个相同的事件
+    
+
+    ie使用attachEvent
+    */
+
+
+    /**@argument
+    对象.addEventListener("事件类型",事件处理函数,false)--ie8不支持
+    */ 
+    btn.addEventListener("click",function(){
+        console.log("邪恶");
+    },false);
+    btn.addEventListener("click",function(){
+        console.log("下流");
+    },false);
+    btn.addEventListener("click",function(){
+        console.log("卑鄙");
+    },false);
+    </script>
+</body>
+</html>

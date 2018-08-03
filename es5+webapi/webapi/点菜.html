@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="点菜" id="btn">
+    <select name="" id="ss">
+        <option value="1">21</option>
+        <option value="2">2</option>
+        <option value="3" id="op1">34</option>
+        <option value="4">434</option>
+        <option value="5" >32</option>
+    </select>
+    <div></div>
+    <button id="cg" value="e">changestyl</button>
+
+    
+    <div class="dv" style="width: 200px; height: 300px; background: red;"></div>
+    <a href="javascript:;" id="btn10">点我</a>
+    <script src="./js/myjquery.js"></script>
+    <script>
+        $("#btn").onclick=function(){
+            $("#op1").selected=true;
+        }
+        /*disabled = "true" readonly= "true"*/
+
+        /**@argument
+         * 修改css样式
+         * style看作一个对象，它既是属性也是对象
+         * 凡是css中多个单词的
+         * 在css总操作dom的时候，直接连接，驼峰命名法
+         * */
+        $("#cg").onclick=function(){
+            $("div").style.width="200px";
+            $("div").style.height="200px";
+            $("div").style.backgroundColor="hotpink";
+        }
+        //隐藏--xianshi
+        $("#btn10").onclick=function(){
+            if($(".dv").style.display=="none"){
+                $(".dv").style.display="block";
+            }else{
+                $(".dv").style.display="none";
+            }
+        }
+
+
+    </script>
+</body>
+</html>

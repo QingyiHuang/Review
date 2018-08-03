@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <span>568</span>
+        <p>55</p>
+        <p>55</p>
+        <p>55</p>
+        <ul>
+            <li>haha</li>
+            <li>haha</li>
+            <li>haha</li>
+            <li>haha</li>
+        </ul>
+    </div>
+
+    <script>
+        /**
+         * 获取相关的父节点和父级元素
+         * 父级节点 parentNode parentElement
+         * nodeType div为1
+         * nodeName
+         * nodeValue
+         *  body>html>#document
+         */
+        function $(id){
+            return document.querySelector(id);
+        };
+        var ulObj=$("ul");
+        console.log(ulObj.parentNode);
+        console.log(ulObj.parentNode.nodeType);
+        console.log(ulObj.parentNode.nodeName);
+        console.log(ulObj.parentNode.nodeValue);
+
+        
+
+    </script>
+</body>
+</html>

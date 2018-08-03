@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>代表月亮</li>
+        <li>代表月亮</li>
+        <li>代表月亮</li>
+        <li>代表月亮</li>
+        <li>代表月亮</li>
+        <li>代表月亮</li>
+        <li>代表月亮</li>
+        <li>代表月亮</li>
+        <li>代表月亮</li>
+        <li>代表月亮</li>
+    </ul>
+    <script>
+    //进入和离开
+    var list =document.getElementsByTagName("li");
+    for(let key in list){
+        list[key].onmouseover=function(){
+            this.style.backgroundColor="yellow";
+        };
+        list[key].onmouseout=function(){
+            this.style.backgroundColor="red";
+        }
+     //document.getElementsByName
+    }
+    </script>
+</body>
+</html>

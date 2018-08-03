@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="修改性别" id="btn">
+    <input type="radio" name="sex" id="" value="1">男
+    <input id="rd2" type="radio" name="sex" id="" value="2">女
+    <input type="radio" name="sex" id="" value="3">女博士
+    <input type="radio" name="sex" id="" value="4">人妖
+
+    <script>
+    /**@argument
+     * 在表单标签中，如果属性和值只有一个，且
+     * 值是这个属性本身，那么dom操作的时候，这个属性值是
+     * boolean类型就可以了
+     * 
+     * */
+    function my$(id){
+        return document.querySelector(id);
+    }
+    //*********************
+    my$("#btn").onclick=function(){
+        my$("#rd2").checked=true;
+    }
+    </script>
+</body>
+</html>

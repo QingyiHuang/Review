@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <button id="btn">11111111</button>
+        <button id="btn2">222222222</button>
+        <button id="btn3">3333333</button>
+        <div>
+    
+        </div>
+        <script>
+        var dv=document.getElementsByTagName("div");
+        document.getElementById("btn").onclick=function(){
+        
+            if(!document.querySelector("#newWorld")){
+                var obj=document.createElement("input");
+                obj.type="button";
+                obj.value="神秘次元";
+                obj.id="newWorld";
+                dv[0].appendChild(obj);
+            }
+        }
+        </script>
+</body>
+</html>

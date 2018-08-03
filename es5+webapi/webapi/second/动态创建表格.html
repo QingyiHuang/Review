@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 500px;
+        margin: 0 auto;
+    }
+    input{
+        width: 100px;
+        height: 50px;
+    }
+    ul li{
+        list-style: none;
+    }
+    </style>
+</head>
+<body>
+    <input type="button" value="创建" id="btn">
+    <div class="dv"></div>
+
+    <script>
+    var fu=[
+        {
+            name:"google",href:"http://www.google.com"
+        },
+        {
+            name:"tencent",href:"http://www.qq.com"
+        },
+        {
+            name:"tudou",href:"http://www.tudou.com"
+        },
+    ];
+    var btn=document.querySelector("#btn");
+    var dv=document.querySelector(".dv");
+    btn.onclick=function(){
+        var tableObj=document.createElement("table");
+        tableObj.border="1";
+        tableObj.cellPadding=0;
+        tableObj.cellSpacing=0;
+        dv.appendChild(tableObj);
+        //行
+        for(let key in fu){
+            var trObj=document.createElement("tr");
+            tableObj.appendChild(trObj);
+            var td1=document.createElement("td");
+            td1.innerText=fu[key].name;
+            trObj.appendChild(td1);
+            var td2=document.createElement("td");
+            td2.innerHTML="<a href="+fu[key].href+">"+fu[key].name+"</a>";
+            trObj.appendChild(td2);
+            
+        }
+    }
+    </script>
+</body>
+</html>

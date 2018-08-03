@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100px;
+            height: 60px;
+        }
+        body{
+            background-image: url("./img/123.jpg")
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href=""><img src="./img/123.jpg" alt=""></a>
+        <a href=""><img src="./img/124.jpg" alt=""></a>  
+    </div>
+
+    <script>
+    var aObj=document.querySelectorAll("div")[0].children;
+    for(let key in aObj){
+        aObj[key].onclick=function(){
+            document.body.style.backgroundImage="url("+this.children[0].src+")";
+            return false;//防止跳转
+        }
+    };
+    </script>
+</body>
+    
+</html>

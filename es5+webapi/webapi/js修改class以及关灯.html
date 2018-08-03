@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .font1{
+        font-size: 16px;
+        color: darkred;
+    }
+    .font2{
+        font-size: 30px;
+        color:deeppink;
+    }
+    .dark{
+        background: deeppink;
+    }
+    </style>
+</head>
+<body>
+    <p>真惨，真挫</p>
+    <script src="./js/myJquery.js"></script>
+    <script>
+    $("p").onclick=function(){
+        if(this.className!="font2"){
+            this.className="font2";
+        }else{
+            this.className="font1";
+        }
+        document.body.className="dark";
+    }
+    </script>
+</body>
+</html>
