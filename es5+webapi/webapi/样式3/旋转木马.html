@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>旋转木马轮播图</title>
+  <link rel="stylesheet" href="css/css.css"/>
+</head>
+<body>
+<div class="wrap" id="wrap">
+  <div class="slide" id="slide">
+    <ul>
+      <li><a href="#"><img src="img/1.jpg" alt=""/></a></li>
+      <li><a href="#"><img src="img/2.jpg" alt=""/></a></li>
+      <li><a href="#"><img src="img/3.jpg" alt=""/></a></li>
+      <li><a href="#"><img src="img/4.jpg" alt=""/></a></li>
+      <li><a href="#"><img src="img/5.jpg" alt=""/></a></li>
+    </ul>
+    <div class="arrow" id="arrow">
+      <a href="javascript:;" class="prev" id="arrLeft"></a>
+      <a href="javascript:;" class="next" id="arrRight"></a>
+    </div>
+  </div>
+</div>
+<script src="./js/任意属性animate.js"></script>
+<script>
+    
+        /*
+        arr.shift 去掉头
+        arr.unshift 头部添加
+        arr.push 末尾添加
+        arr.pop 去掉末尾
+        */    
+        var config = [
+          {
+            width: 400,
+            top: 20,
+            left: 50,
+            opacity: 0.2,
+            zIndex: 2
+          },//0
+          {
+            width: 600,
+            top: 70,
+            left: 0,
+            opacity: 0.8,
+            zIndex: 3
+          },//1
+          {
+            width: 800,
+            top: 100,
+            left: 200,
+            opacity: 1,
+            zIndex: 4
+          },//2
+          {
+            width: 600,
+            top: 70,
+            left: 600,
+            opacity: 0.8,
+            zIndex: 3
+          },//3
+          {
+            width: 400,
+            top: 20,
+            left: 750,
+            opacity: 0.2,
+            zIndex: 2
+          }//4
+    
+        ];
+    
+    function my$(id){
+        return document.getElementById(id);
+    }
+    var list=my$("slide").getElementsByTagName("li");
+    var flag = true;//假设所有动画执行完毕 防止多个韩式执行
+    //分配
+    function assign(){
+        //散开图片
+        for(let i=0;i<list.length;i++){
+            animate(list[i],config[i],function(){
+                flag=true;
+            })
+        }
+    }
+    assign();
+
+    //左右按钮
+    my$("arrLeft").onclick=function(){
+        if(flag){
+            flag=false;
+            config.unshift(config.pop());
+            assign();
+        }
+    }
+    my$("arrRight").onclick=function(){
+        if(flag){
+            flag=false;
+            config.push(config.shift());
+            assign();
+        }
+    }
+      </script>
+</body>
+</html>
+    

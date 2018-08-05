@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+      width: 322px;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      overflow: hidden;
+    }
+    span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30px;
+      height: 20px;
+      cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+        <div class="box" id="box">
+                <span id="closeButton"></span>
+                <div class="hd" id="headPart">
+                    <img src="img/t.jpg" alt=""/>
+                </div>
+                <div class="bd" id="bottomPart">
+                    <img src="img/b.jpg" alt=""/>
+                </div>
+         </div>
+    <script src="./js/任意属性animate.js"></script>
+    <script>
+    var btn = document.getElementById("closeButton");
+    var bd=document.getElementsByClassName("bd")[0];
+    var hd=document.getElementsByClassName("hd")[0];
+    var box=document.getElementById("box");
+    btn.onclick=function(){
+        animate(bd,{"height":0},function(){animate(box,{"width":0})});
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #dv{
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+    }
+    </style>
+</head>
+<body>
+    <input type="button" value="button" id="btn">
+    <div id="dv"></div>
+
+    <script>
+    /**
+    offset Left Top Patent Width Height 带边框
+
+    scroll Left 向左卷曲出去的距离
+    top向上卷曲出去的距离
+    width 元素中内容实际的宽--内容少 则是元素自身的width 没边框
+    height 元素中内容的实际的高--如果内容少，则是元素自身的height 没边框
+
+    client可视区域 得到元素内部，不带边框 w h
+    l t 得到的是边框的宽度
+     */
+     var dv =document.getElementById("dv");
+     console.log(dv.clientHeight+"高-----------宽"+dv.clientWidth)
+     
+     
+     console.log(dv.clientLeft+"left边框-----------top边框"+dv.clientTop)
+    </script>
+</body>
+</html>

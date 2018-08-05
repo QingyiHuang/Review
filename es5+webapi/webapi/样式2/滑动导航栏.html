@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    ul{
+        list-style: none;
+    }
+    body{
+        background:#333;
+    }
+    .nav{
+        width: 800px;
+        height: 42px;
+        margin: 100px auto;
+        background: url(img/rss.png) right center no-repeat;
+        background-color: aliceblue;
+        border-radius: 10px;
+        position: relative;
+    }
+    span{
+        position: absolute;
+        width: 83px;
+        height: 42px;
+        background: url(img/cloud.gif) no-repeat; 
+        top:0;
+        left: 0;
+    }
+    #navBar{
+        position: relative;
+    }
+    #navBar li{
+        width: 83px;
+        height: 42px;
+        text-align: center;
+        line-height: 42px;
+        float: left;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <span></span>
+        <ul id="navBar">
+            <li>守护甜心</li>
+            <li>守护甜心</li>
+            <li>守护甜心</li>
+            <li>守护甜心</li>
+            <li>守护甜心</li>
+            <li>守护甜心</li>
+            <li>守护甜心</li>
+            <li>守护甜心</li>
+        </ul>
+    </div>
+    <script src="./js/animate.js"></script>
+    <script>
+    //js获取伪元素
+    var nav= document.querySelector(".nav");
+    var cloud = nav.getElementsByTagName("span")[0];
+    var navBar = document.querySelector("#navBar");
+    var list = navBar.children;
+
+    //注册鼠标进入 离开 点击
+    for(let i=0;i<list.length;i++){
+        list[i].onmouseover=mouseoverHandle;
+        list[i].onclick=clickHandle;
+        list[i].onmouseout=mouseoutHandle;
+    }
+    function mouseoverHandle(){
+        animate2(cloud,this.offsetLeft);
+    }
+    //点击时记录上次位置
+    var lastPosition=0;
+    function clickHandle(){
+        lastPosition=this.offsetLeft;
+    }
+    function mouseoutHandle(){
+        animate2(cloud,lastPosition);
+    }
+    </script>
+</body>
+</html>

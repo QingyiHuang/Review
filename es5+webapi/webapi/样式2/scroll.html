@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        padding: 0;
+        padding: 0;
+    }
+    div{
+        width: 80px;
+        height: 100px;
+        border: 2px solid red;
+        overflow: auto;
+    }
+    </style>
+</head>
+<body>
+    <div class="dv">
+        啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+        啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+        啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+        啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+        啊啊
+    </div>
+    <input type="button" value="显示效果 ">
+    <script>
+    var dv=document.getElementsByClassName("dv")[0];
+    var btn=document.getElementsByTagName("input")[0];
+    /*
+    offset是当前元素的w h l t 带border
+    scroll 卷曲
+    得到元素中内容的宽高 l t 不带border 如果没内容或内容不足 ，则scroll宽高为容器
+    scroll top 就是出去父盒子的距离
+    */
+    btn.onclick=function(){
+        console.log(dv.scrollWidth);
+        console.log(dv.scrollHeight);
+        console.log(dv.scrollLeft);
+        console.log(dv.scrollTop);//滚动向上出去的内容长度
+        console.log(dv.offsetLeft);
+        console.log(dv.offsetTop);
+
+    }
+    //发生滚动事件
+    dv.onscroll=function(){
+        console.log(this.scrollTop);
+    }
+    </script>
+</body>
+</html>
