@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .inner li img{
+                width: 700px;
+                height: 400px;
+            }
+            .box{
+                width: 700px;
+                margin: 100px auto;
+                padding: 5px;
+                padding-right: 11px;
+                border: 1px solid black;
+            }
+            .inner{
+                position: relative;
+                width: 700px;
+                height: 400px;
+                border: 3px solid red;
+                overflow: hidden;
+            }
+            .inner ul{
+                list-style: none;
+                position: absolute;
+                width: 1000%;
+            }
+            .inner ul li{
+                float: left;
+            }
+
+            .square{
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+            }
+            .square span{
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                background: floralwhite;
+                text-align: center;
+                line-height: 16px;
+                cursor: pointer;
+            }
+            .square span.current{
+                /*权重没上面高，会被层叠 */
+                background: forestgreen;
+                color: #fff;
+            }
+            .inner>a{
+                display: block;
+                position: absolute;
+                width: 80px;
+                height: 100px;
+                background: rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+                color: #fff;
+                font-size: 30px;
+                line-height: 100px;
+                font-weight: bold;
+                text-decoration: none;
+                text-align: center;
+                top:50%;
+                margin-top:-50px;
+                border-radius: 8px;
+                display: none;
+            }
+            .inner>a:hover{
+                background: rgba(0, 0, 0, 0.4);
+            }
+            .box:hover .inner>a{
+                display: block;
+            }
+            #left{
+                left: 0;
+            }
+            #right{
+                right: 0;
+            }
+            </style>
+</head>
+<body>
+    <div class="box" id="box">
+            <div class="inner"><!--相框-->
+                <ul>
+                  <li><a href="#"><img src="img/123.jpg" alt=""/></a></li>
+                  <li><a href="#"><img src="img/124.jpg" alt=""/></a></li>
+                  <li><a href="#"><img src="img/125.jpg" alt=""/></a></li>
+                  <li><a href="#"><img src="img/126.jpg" alt=""/></a></li>
+                  <li><a href="#"><img src="img/127.jpg" alt=""/></a></li>
+                  <li><a href="#"><img src="img/123.jpg" alt=""/></a></li>
+                </ul>
+                <div class="square">
+                  <span class="current">1</span>
+                  <span>2</span>
+                  <span>3</span>
+                  <span>4</span>
+                  <span>5</span>
+                </div>
+                <a id="left" href="##">&lt;</a>
+                <a id="right" href="##">&gt;</a>
+            </div>
+    </div>
+    
+    <script>
+    var ad = document.getElementsByClassName("inner")[0];
+    var ul = ad.firstElementChild;
+    var imgWidth = ad.offsetWidth;
+    var leftBtn = document.getElementById("left");
+    var rightBtn = document.getElementById("right");
+    var current = 0;
+    function f1(){
+        current-=10;
+        if(current<-3500){
+            ul.style.left=0+"px";
+            current=0;
+        }else{
+            ul.style.left=current+"px";
+        }
+    }
+
+
+       var timeId = setInterval(f1,20);
+        document.getElementById("box").onmouseover=function(){
+            clearInterval(timeId);
+        }
+        document.getElementById("box").onmouseout=function(){
+            timeId = setInterval(f1,20);
+        }
+
+    </script>
+</body>
+</html>

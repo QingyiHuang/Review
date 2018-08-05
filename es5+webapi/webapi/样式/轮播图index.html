@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .inner li img{
+        width: 700px;
+        height: 400px;
+    }
+    .box{
+        width: 700px;
+        margin: 100px auto;
+        padding: 5px;
+        padding-right: 11px;
+        border: 1px solid black;
+    }
+    .inner{
+        position: relative;
+        width: 700px;
+        height: 400px;
+        border: 3px solid red;
+        overflow: hidden;
+    }
+    .inner ul{
+        list-style: none;
+        position: absolute;
+        width: 1000%;
+    }
+    .inner ul li{
+        float: left;
+    }
+    .square{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
+    .square span{
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: floralwhite;
+        text-align: center;
+        line-height: 16px;
+        cursor: pointer;
+    }
+    .square span.current{
+        /*权重没上面高，会被层叠 */
+        background: forestgreen;
+        color: #fff;
+    }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="inner"><!--相框-->
+            <ul>
+              <li><a href="#"><img src="img/123.jpg" alt=""/></a></li>
+              <li><a href="#"><img src="img/124.jpg" alt=""/></a></li>
+              <li><a href="#"><img src="img/125.jpg" alt=""/></a></li>
+              <li><a href="#"><img src="img/126.jpg" alt=""/></a></li>
+              <li><a href="#"><img src="img/127.jpg" alt=""/></a></li>
+            </ul>
+            <div class="square">
+              <span class="current">1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+              <span>5</span>
+            </div>
+          </div>
+    </div>
+
+    <script>
+        var inner = document.querySelector(".inner");
+        var ul = inner.firstElementChild;
+        var spanObjs=inner.children[1].children;
+        var imgWidth=inner.offsetWidth;
+        //循环时，把索引保存在每个span的标签中
+        //循环遍历所有span注册鼠标进入  单层循环
+        for(let key=0;key<spanObjs.length;key++){
+            spanObjs[key].setAttribute("index",key);
+            spanObjs[key].onmouseover=function(){
+                //清空class 设置class
+                for(var j=0;j<spanObjs.length;j++){
+                    //移除了每个span的类样式//spanObjs[i].className="";
+                    spanObjs[j].removeAttribute("class");
+                }
+                this.className="current";
+                //移动ul,现货去鼠标进入span元素的索引值
+                var index = this.getAttribute("index");
+                animate(ul,-index*700);
+
+            }
+        }
+
+         function animate(element,target){
+             clearInterval(element.timeId);//每次调用都清除
+             element.timeId = setInterval(function(){//定时器ID存到对象属性中
+                 var current = element.offsetLeft;
+                 var step = 10;
+                 step = current < target? step:-step;
+                 current+=step;
+                 if(Math.abs(current-target)>Math.abs(step)){
+                     element.style.left=current+"px";
+                 }else{
+                     clearInterval(element.timeId);
+                     element.style.left=target+"px";
+                 }
+             },1)
+         }
+    </script>
+</body>
+</html>

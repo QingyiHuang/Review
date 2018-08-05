@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    img{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+    }
+    </style>
+</head>
+<body>
+    <img src="img/123.jpg" alt="">
+    <script>
+    var img=document.getElementsByTagName("img")[0];
+    //页面中
+    document.onmousemove=function(e){
+        //可以看见区域的横纵坐标
+        img.style.left=e.clientX+"px";
+        img.style.top=e.clientY+"px";
+        /*img.style.left=e.offsetX+"px";
+        img.style.top=e.offsetY+"px";*/ //有bug
+    }
+    </script>
+</body>
+</html>

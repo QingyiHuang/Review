@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    input{
+        width: 200px;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <input id="txt" type="text"><button id="btn">搜索</button>
+    </div>
+    <script>
+    var keywords=["我怀孕了","我怀疑","怎么办","怎么啦","上京东","上学","就够了","abcde","我是谁","我是数据啊","竞价排名"];
+    var txt=document.getElementById("txt");
+    var box = document.querySelector("#box");
+    //注册键盘抬起事件onkeyup
+    //
+    function f1(){
+        this.style.backgroundColor="red";
+    }
+    function f2(){
+        this.style.backgroundColor="#fff";
+    }
+    txt.onkeyup=function(){
+
+
+        //fix bug 每次onkeyup 都判断有没有
+        if(document.querySelector("#info")){
+            box.removeChild(document.querySelector("#info"));
+        }
+
+        var text = this.value;
+        //临时数组
+        var tempArr=[];
+
+
+        //把文本框的输入的内容和数组中每个数据都对比
+        for(let key in keywords){
+            if(keywords[key].indexOf(text)==0)//如果对比的上。那就把key数组中的值存到temp
+            {
+                tempArr.push(keywords[key]);
+            }
+        }
+
+        //如果文本框是空的，临时数组是空的，不用创建div
+        if(this.value.length==0||tempArr.length==0){
+            if(document.querySelector("#info")){
+                box.removeChild(document.querySelector("#info"));
+            }
+             return;
+        }
+        //创建DIV
+        var dvObj = document.createElement("div");
+        box.appendChild(dvObj);
+        dvObj.style.width="200px";
+        dvObj.style.border="3px solid green";
+        dvObj.id="info";
+        //循环遍历临时数组，创建对应p变迁
+        for(let key in tempArr){
+            var pObj=document.createElement("p");
+            dvObj.appendChild(pObj);
+            pObj.innerText=tempArr[key];
+            pObj.style.cursor="pointer";
+            pObj.style.margin=0;
+            pObj.style.padding=0;
+            pObj.style.paddingLeft="10px";
+            pObj.style.height="20px";
+            pObj.style.lineHeight="20px";
+            pObj.addEventListener("mouseover",f1,false);
+            pObj.addEventListener("mouseout",f2,false);
+        }
+
+    }
+
+    //遍历临时数组，创立div
+
+    //if(tempArr)
+
+    </script>
+</body>
+</html>

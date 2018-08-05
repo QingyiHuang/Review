@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="停止" id="btn">
+    <script>
+    //一次性定时
+    //参数1：函数
+    //参数2：事件---1000毫秒----1s
+    //返回值 该定时器的id
+    //window.setTimeout(函数，时间);
+    //
+
+    var timeId=window.setTimeout(function(){
+        console.log("hahahaha");
+    },1000);
+    document.getElementById("btn").onclick=function(){
+        clearTimeout(timeId);
+    }
+    </script>
+</body>
+</html>

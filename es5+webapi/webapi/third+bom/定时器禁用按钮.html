@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="texta" id="" cols="30" rows="10">
+
+        asdussifsdfihsduihusdhgiusdhguhsouh
+    </textarea>
+    <input type="button" value="请背诵上面文字(5)" id="btn" disabled="disabled">
+    <script>
+        var time=5;
+        var btn=document.getElementById("btn");
+    var timeId=setInterval(function(){
+        
+        time--;
+        btn.value="请背诵上面文字("+time+")";
+            if(time<=0){
+            clearInterval(timeId);
+            btn.disabled=false;
+            btn.value="haha"
+        }
+    },1000);
+
+    </script>
+    
+</body>
+</html>

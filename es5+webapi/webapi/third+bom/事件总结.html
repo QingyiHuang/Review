@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+        .dv1{
+            width: 300px;
+            height: 300px;
+            background: deeppink;
+        }
+        .dv2{
+            width: 200px;
+            height: 200px;
+            background: rgb(56, 212, 25);
+        }
+        .dv3{
+            width: 100px;
+            height: 100px;
+            background: rgb(233, 157, 17);
+        }
+</style>
+</head>
+<body>
+
+    <div class="dv1">
+        <div class="dv2">
+            <div class="dv3"></div>
+        </div>
+    </div>
+
+
+    <script>
+    //事件有三个阶段
+    /** 
+     * 1事件捕获阶段:从外向内
+     * 2事件目标阶段:选择的那个是目标
+     * 3事件冒泡阶段:从里向外
+    */
+   //同时注册点击事件
+   var objs=document.querySelectorAll("div");
+   //.forEach(function(ele,index,arr))
+   //为每个元素注册点击事件
+   objs.forEach(function(el){
+       el.addEventListener("click",function(e){
+           console.log(this.className+"    "+e.eventPhase);
+       },false)
+   });
+
+   /** 
+    * 事件参数对象中 存在e.eventPhase 1 2 3对应事件三个阶段
+   */
+  /** 
+   * addEventListener("没有on的事件类型"，事件处理函数，控制事件阶段顺序)
+   * 事件触发的过程中，可能会出新啊事件冒泡的效果，为了阻止事件冒泡
+   * window.event.cancelBubble ie google 火狐不支持 window.event就是ie的标准
+   * 
+   * e.stopPropagation() 火狐谷歌支持，ie不支持，需要兼容
+   * 
+  */
+    </script>
+</body>
+</html>

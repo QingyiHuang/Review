@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOM</title>
+</head>
+<body>
+    
+    <script>
+    /**
+        浏览器有个顶级对象，window ----皇上
+        页面中顶级对象 document ----太监
+        页面中所有内容都是浏览器的，页面中的内容也都是window的
+     */
+    //例子
+    var num =10;
+    //this 也指代window
+    this.console.log(window.num);
+    //方法的本质是函数
+    function f1(){
+        console.log("f1")
+    }
+    window.f1();
+    //因为页面中的所有内容都是window的，window是可以省略的
+    //window.name很特殊 它不是undefined  尽量不要用name
+    //top 是window的别名 
+
+
+    //window.alert()不要使用  测试的使用 弹框对用户体验不好
+    //window.pormpt(“please input”)输入框 体验不好 
+    //想弹框用div+css制作
+    //window.confirm("SDA")返回true andfalse
+
+    //页面加载完毕，这个事件就会触发
+    window.onload=function(){
+        console.log("页面加载完毕");
+    }
+    //window.onunload 页面关闭事件ie
+    </script>
+</body>
+</html>

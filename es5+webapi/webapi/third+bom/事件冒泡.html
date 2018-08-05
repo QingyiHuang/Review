@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .dv1{
+            width: 300px;
+            height: 300px;
+            background: deeppink;
+        }
+        .dv2{
+            width: 200px;
+            height: 200px;
+            background: rgb(56, 212, 25);
+        }
+        .dv3{
+            width: 100px;
+            height: 100px;
+            background: rgb(233, 157, 17);
+        }
+    </style>
+</head>
+<body>
+    <div class="dv1">
+        <div class="dv2">
+            <div class="dv3"></div>
+        </div>
+    </div>
+
+    <script>
+        //事件冒泡：多个元素嵌套，有层次关系，这些元素都注册了相同
+        //的事件，如果里面的元素出发了，那么外面的元素该事件自动触发 
+    function $(id){
+        return document.querySelector(id);
+    }
+/*注册绑定事件*/
+    $(".dv1").onclick=function(){//最外 
+        console.log(this.className);
+        console.log(arguments.length);
+
+    }
+    $(".dv2").onclick=function(){//次外 
+        console.log(this.className);
+        console.log(arguments.length);
+        
+    }
+    $(".dv3").onclick=function(){//内 
+        console.log(this.className);
+        console.log(arguments.length);
+        //window.event.cancelBubble=true;
+        event.stopPropagation();
+    }
+/** 
+ * 阻止事件冒泡
+ * e:event  事件处理参数对象,当是个事件的时候，自动有个参数e
+ * window.event.cancelBubble=true;ie 谷歌支持，火狐不支持
+ * event.stopPropagation();谷歌 火狐支持。ie不支持
+ * ie中使用window.event 谷歌和火狐使用event  
+*/
+
+
+
+    </script>
+</body>
+</html>

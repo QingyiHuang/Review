@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .inner li img{
+                width: 700px;
+                height: 400px;
+            }
+            .box{
+                width: 700px;
+                margin: 100px auto;
+                padding: 5px;
+                padding-right: 11px;
+                border: 1px solid black;
+            }
+            .inner{
+                position: relative;
+                width: 700px;
+                height: 400px;
+                border: 3px solid red;
+                overflow: hidden;
+            }
+            .inner ul{
+                list-style: none;
+                position: absolute;
+                width: 1000%;
+            }
+            .inner ul li{
+                float: left;
+            }
+
+            .square{
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+            }
+            .square span{
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                background: floralwhite;
+                text-align: center;
+                line-height: 16px;
+                cursor: pointer;
+            }
+            .square span.current{
+                /*权重没上面高，会被层叠 */
+                background: forestgreen;
+                color: #fff;
+            }
+            .inner>a{
+                display: block;
+                position: absolute;
+                width: 80px;
+                height: 100px;
+                background: rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+                color: #fff;
+                font-size: 30px;
+                line-height: 100px;
+                font-weight: bold;
+                text-decoration: none;
+                text-align: center;
+                top:50%;
+                margin-top:-50px;
+                border-radius: 8px;
+                display: none;
+            }
+            .inner>a:hover{
+                background: rgba(0, 0, 0, 0.4);
+            }
+            .box:hover .inner>a{
+                display: block;
+            }
+            #left{
+                left: 0;
+            }
+            #right{
+                right: 0;
+            }
+            </style>
+</head>
+<body>
+    <div class="box" id="box">
+            <div class="inner"><!--相框-->
+                <ul>
+                  <li><a href="#"><img src="img/123.jpg" alt=""/></a></li>
+                  <li><a href="#"><img src="img/124.jpg" alt=""/></a></li>
+                  <li><a href="#"><img src="img/125.jpg" alt=""/></a></li>
+                  <li><a href="#"><img src="img/126.jpg" alt=""/></a></li>
+                  <li><a href="#"><img src="img/127.jpg" alt=""/></a></li>
+                </ul>
+                <div class="square">
+                  <span class="current">1</span>
+                  <span>2</span>
+                  <span>3</span>
+                  <span>4</span>
+                  <span>5</span>
+                </div>
+                <a id="left" href="##">&lt;</a>
+                <a id="right" href="##">&gt;</a>
+            </div>
+    </div>
+    
+    <script>
+    var ad = document.getElementsByClassName("inner")[0];
+    var ul = ad.firstElementChild;
+    var imgWidth = ad.offsetWidth;
+    var leftBtn = document.getElementById("left");
+    var rightBtn = document.getElementById("right");
+
+    var index=0;
+    //right btn  index*imgwidth 是目标地点的x坐标
+    rightBtn.onclick=function(){
+        if(index<ul.children.length-1){
+            index++;
+            animate(ul,-index*imgWidth);
+        }
+    }
+    //left btn
+    leftBtn.onclick=function(){
+        if(index>0){
+        index--;
+        animate(ul,-index*imgWidth);  
+        }
+    }
+
+
+
+    function animate(element,target){
+        clearInterval(element.timeId);//每次调用都清除
+        element.timeId = setInterval(function(){//定时器ID存到对象属性中
+            var current = element.offsetLeft;
+            var step = 10;
+            step = current < target? step:-step;
+            current+=step;
+            if(Math.abs(current-target)>Math.abs(step)){
+                element.style.left=current+"px";
+            }else{
+                clearInterval(element.timeId);
+                element.style.left=target+"px";
+            }
+        },1)
+    }
+    </script>
+</body>
+</html>

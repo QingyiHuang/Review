@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 200px;
+        height: 200px;
+        background: deeppink;
+    }
+    </style>
+</head>
+<body>
+    <div class="dv"></div>
+    <input type="button" value="改透明" id="btn">
+    <script>
+    var btn = document.getElementById("btn");
+    var dv = document.querySelector(".dv");
+
+    /*
+    js中小数和小数计算具有BUG所以最好是正数计算
+    opacity 透明度
+    */
+    
+    var deep=10;
+    
+    btn.onclick=function(){
+       var timeId =  setInterval(function(){
+            deep-= 1;
+            if(deep<=0){
+                clearInterval(timeId);
+            }
+            dv.style.opacity=deep/10;
+
+        },80)
+
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        /**
+        * 用什么方式绑定事件，就应该用对应的方式绑定事件
+        * 1接棒时间
+        * 对象.on事件名字=事件处理函数--->绑定事件
+        * 对象.on事件名字=null
+        * 2解绑事件
+        * 对象.addEventListener("没哟On的事件类型",命名函数，false)
+        * obj.removeEventListener("没有on的事件类型",函数名字，false) ie8不支持
+        * 其中函数要相同，所以一定是命名函数
+        * 3解绑事件 ie
+        * obj.attachEvent("on 事件",cb)
+        * obk.detachEvent("on 事件",cb)
+        * 
+        */
+    <h2>解绑监听</h2>
+    <input type="button" value="三大吗" id="btn">
+    <input type="button" value="干掉三大妈" id="btn2">
+    <input type="button" value="removeEventListenner" id="btn3">
+    <script>
+    function aa(){
+        console.log("this is addEventListener2");
+    }
+    function bb(){
+        console.log("this is addEventListener1");
+    }
+    document.querySelector("#btn").addEventListener("click",aa,false);
+    document.querySelector("#btn").addEventListener("click",bb,false);
+    /**@argument
+     * vay1
+     * 解绑。on事件名字=事件处理函数-->解绑事件
+     *       on事件名字=null
+     * */
+    document.querySelector("#btn2").onclick=function(){
+        document.querySelector("#btn").onclick=null;
+    }
+    /*
+    和addEventlistenner 参数一项，需要在添加监听时间的时候，使用
+    命名函数，而不是匿名函数，因为匿名函数不可能是同个函数
+    */
+    document.querySelector("#btn3").onclick=function(){
+        document.querySelector("#btn").removeEventListener("click",aa,false);
+    }
+    </script>
+</body>
+</html>

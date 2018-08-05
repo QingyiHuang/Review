@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="sss" id="btn">
+    <script>
+        /*事件参数处理对象*/
+    var btn=document.querySelector("#btn");
+    btn.onclick=f1;
+    btn.onmouseover=f1;
+    btn.onmouseout=f1;
+    function f1(e){
+        switch(e.type){//e.type 就是事件"
+            case "click":this.style.border="1px solid red";break;
+            case "mouseover":this.style.backgroundColor="pink";break;
+            case "mouseout":this.style.backgroundColor="maroon";break;
+        }
+    }
+    </script>
+</body>
+</html>

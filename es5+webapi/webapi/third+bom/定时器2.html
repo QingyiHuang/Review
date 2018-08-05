@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 500px;
+        height: 500px;
+        background: black;
+        margin: 0 auto;
+        color: yellow;
+        font-size: 30px;
+        position: relative;
+    }
+    span{
+        position: absolute;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <input type="button" id="btn" value="start">
+    <script>
+    var btn = document.getElementById("btn");
+    var dv = document.querySelector("div");
+    btn.onclick=function(){
+        dv.innerHTML="<span>★</span>";
+        setInterval(function(){
+            dv.children[0].style.top=(Math.random()*500+1)+"px";
+             dv.children[0].style.left=(Math.random()*500+1)+"px";
+        },5)
+
+    }
+    </script>
+</body>
+</html>
