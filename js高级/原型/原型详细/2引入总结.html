@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        Person.prototype.say=function(){
+            console.log("hello");
+        }
+        var per1=new Person();
+    //实例对象有__proto__属性叫原型  是对象不是标准属性，浏览器使用
+    //构造函数中有prototype属性叫原型 是对象 是标准属性，程序员使用
+    //原型-->__proto__或者是prototype,都是原型对象
+        console.log(per1.__proto__);
+        console.log(Person.prototype);
+    /** 
+     * 原型的作用，共享数据，节省内存空间
+    */
+    </script>
+</body>
+</html>

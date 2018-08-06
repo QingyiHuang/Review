@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 300px;
+        height: 200px;
+    }
+    </style>
+</head>
+<body>
+    <div id="dv"></div>
+    <input type="button" id="btn" value="button">
+    <script>
+    function ChangeStyle(btn,dv,json){
+        this.btn=document.getElementById(btn);
+        this.dv=document.getElementById(dv);
+        this.json=json;
+    }
+    ChangeStyle.prototype.init=function(){
+        var that = this;
+        this.btn.onclick=function(){
+            for(let key in that.json){
+                that.dv.style[key]=that.json[key];
+            }
+        }
+    }
+    var json={//键：值
+        "width":"500px","height":"800px","backgroundColor":"blue"
+    };
+    /*for(let i in json){
+        console.log(i);//键
+        console.log(json[i]);//值
+    }*/
+    var cs =new ChangeStyle("btn","dv",json);
+    cs.init();
+
+    </script>
+</body>
+</html>

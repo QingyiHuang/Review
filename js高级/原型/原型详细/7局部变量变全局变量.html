@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ /*   //函数的自执行,自调用
+    (function(形参){
+        var num=10;//局部变量 作用域内
+    })(实参);//(函数名)()一次性函数
+    console.log(num);//直接拿num报错,如何拿到呢*/
+
+    (function(win){
+        var num=10;
+        //js是门动态类型语言，对象没有属性，点后就有了
+        win.number=num;
+    })(window);
+    console.log(window.number);//window可以省略
+    //局部变量给window就行了
+    </script>
+</body>
+</html>

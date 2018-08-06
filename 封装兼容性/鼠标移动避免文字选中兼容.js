@@ -1,0 +1,1 @@
+window.getSelection? window.getSelection().removeAllRanges():document.selection.empty();

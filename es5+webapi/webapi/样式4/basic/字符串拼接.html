@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="">
+    <input type="text" value="">
+    <input type="text" value="">
+    <input type="text" value="">
+    <input type="text" value="">
+    <input class="btn" type="button" value="点击f12">
+    <script>
+    var btn =document.getElementsByClassName("btn")[0];
+    var inputs = document.getElementsByTagName("input");
+/*    btn.onclick=function(){
+        var str="";
+        //获取所有文本框
+        for(let i=0;i<inputs.length-2;i++){
+            if(inputs[i].type!="button"){
+                str+=inputs[i].value+"|";
+                //字符串拼接，浪费空间 不要使用
+                //因为这东西不可变。
+            }
+        }
+        console.log(str+inputs[inputs.length-2].value);
+    }*/
+    btn.onclick=function(){
+        var arr=[];
+        for(let i = 0;i<inputs.length;i++){
+            if(inputs[i].type!="button"){
+                arr.push(inputs[i].value);
+            }
+        }
+        var str=arr.join("|");
+        console.log(str);
+    }
+    </script>
+</body>
+</html>

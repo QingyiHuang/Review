@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //把产生的随机数函数暴露给window,让外面可以使用该对象
+    //通过自调用函数产生一个随机数对象，在自调用函数外
+    //调用改随机数函数方法产生随机数
+    (function(window){
+        function Random(){
+
+        }
+        Random.prototype.getRandom=function(){
+            return Math.ceil(Math.random()*6);
+        };
+        window.Random=Random;
+    })(window);
+
+    var num = new Random();
+    console.log(num.getRandom());
+    </script>
+</body>
+</html>
