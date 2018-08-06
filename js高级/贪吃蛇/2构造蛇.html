@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .map{
+        width: 800px;
+        height: 600px;
+        background: #ccc;
+        position: relative;
+    }
+    </style>
+</head>
+<body>
+    <div class="map">
+    </div>
+<script>
+    
+    //函数放在自调用函数防止命名污染  方式2
+    //函数放在小括号里。记得加分号
+    var map=document.querySelector(".map");
+    (function(){
+        var elements=[];//用来保存每个小方块食物
+        function food(width,height,x,y,color){
+            this.width=width||20;
+            this.height=height||20;
+            this.x=x||0;
+            this.y=y||0;
+            this.color=color||"red";
+        }
+        food.prototype.init=function(map){
+            removeFood();
+            var div=document.createElement("div");
+            map.appendChild(div);
+            //设置食物样式
+            div.style.position="absolute";
+            div.style.width=this.width+"px";
+            div.style.height=this.height+"px";
+            div.style.backgroundColor=this.color;
+            //随机横纵坐标
+            this.x=parseInt(Math.random()*(map.offsetWidth/this.width))*this.width;
+            this.y=parseInt(Math.random()*(map.offsetHeight/this.height))*this.height;
+            div.style.left=this.x+"px";
+            div.style.top=this.y+"px";
+            elements.push(div);
+        }
+        //是通过数组存储数据并删除数据
+        function removeFood(){//private 
+            for(let i =0;i<elements.length;i++){
+                elements[i].parentNode.removeChild(elements[i]);
+                //数组清空
+                elements.splice(i,1);
+            }
+        }
+        //暴露食物给外部
+        window.Food=food;
+    }());
+    (function(){
+        var elements=[];//存放小蛇的每个身体部分
+        //小蛇构造函数
+        function Snake(width,height,direction){
+            //小蛇的每个部分的宽
+            this.width=width||20;
+            this.height=height||20;
+            this.direction=direction||"right";
+            this.body=[
+                {x:3,y:2,color:"red"},
+                {x:2,y:2,color:"yellow"},
+                {x:1,y:2,color:"orange"},
+            ];
+        }
+        //小蛇初始化
+        Snake.prototype.init=function(map){
+            //删除蛇
+            removeSnake();
+            //创建div
+            for(let i=0;i<this.body.length;i++){
+                var obj=this.body[i];
+                var div = document.createElement("div");
+                map.appendChild(div);
+                div.style.position="absolute";
+                div.style.width=this.width+"px";
+                div.style.height=this.height+"px";
+                div.style.left=obj.x*this.width+"px";
+                div.style.top=obj.y*this.height+"px";
+                div.style.backgroundColor=obj.color;
+                //方向
+                elements.push(div);
+            }
+        };
+        //小蛇移动
+        Snake.prototype.move=function(food,map){
+            var i = this.body.length-1;//2
+            for(i;i>0;i--){
+                this.body[i].x=this.body[i-1].x;
+                this.body[i].y=this.body[i-1].y;
+            }
+            //判断方向
+            switch(this.direction){
+                case "right":this.body[0].x+=1;break;
+                case "left":this.body[0].x-=1;break;
+                case "top":this.body[0].y-=1;break;
+                case "bottom":this.body[0].y+=1;break;
+            }
+            //蛇头
+            var headX=this.body[0].x*this.width;
+            var headY=this.body[0].y*this.height;
+            //food
+            var foodX=food.x;
+            var foodY=food.y;
+            if(headX==foodX&&headY==foodY){
+                var last=this.body[this.body.length-1];
+                this.body.push({
+                    x:last.x,
+                    y:last.y,
+                    color:last.color
+                });
+                food.init(map);
+            }
+        }
+        //删除蛇
+        function removeSnake(){
+            for(let i=elements.length-1;i>=0;i--){
+                elements[i].parentNode.removeChild(elements[i]);
+                elements.splice(i,1);//从i位置删除一个元素
+            }
+        }
+
+        window.Snake=Snake;
+    }());
+
+    //游戏构造函数
+        (function(){
+            var that = null;//保存对象
+            function Game(map){
+                this.food=new Food();
+                this.snake=new Snake();
+                this.map=map;
+                that=this;
+            }
+            Game.prototype.init=function(){
+                this.food.init(this.map);
+                this.snake.init(this.map);
+                this.runSnake(this.food,this.map);
+                this.bindKey();
+            };
+            //自动跑 用中间变量that 存储  way2 bind(that)
+            Game.prototype.runSnake=function(food,map){
+                /*setInterval(function(){
+                    //调用定时器的是window
+                    that.snake.move(food,map);
+                    that.snake.init(map);
+                },150);*/
+                //横坐标最大值
+                var maxX=map.offsetWidth/this.snake.width;
+                var maxY=map.offsetHeight/this.snake.height;
+                
+                var timeId=setInterval(function(){
+                    //调用定时器的是window
+                    this.snake.move(food,map);
+                    this.snake.init(map);
+                    //蛇头坐标
+                    var headX=this.snake.body[0].x;
+                    var headY=this.snake.body[0].y;
+                    if(headX<0||headX>maxX){
+                        clearInterval(timeId);
+                        alert("撞墙了");
+                    }
+                    if(headY<0||headY>maxX){
+                        clearInterval(timeId);
+                        alert("撞墙了");
+                    }
+                }.bind(that),150);//bind什么 this就指什么
+            }
+            //用户
+            Game.prototype.bindKey=function(){
+                document.addEventListener("keydown",function(e){
+                    
+                    switch (e.keyCode){
+                        case 37:this.snake.direction="left";break;
+                        case 38:this.snake.direction="top";break;
+                        case 39:this.snake.direction="right";break;
+                        case 40:this.snake.direction="bottom";break;
+                    }
+                }.bind(that),false);
+            }
+            window.Game=Game;
+        }());
+    var game = new Game(map);
+    game.init();
+
+    /*var fd = new window.Food();
+    var sn = new window.Snake();
+    fd.init(map);
+    sn.init(map);//重新画蛇
+    sn.move(fd,map);
+    sn.init(map);
+    sn.move(fd,map);
+    sn.init(map);
+    sn.move(fd,map);*/
+    
+</script>
+</body>
+</html>
