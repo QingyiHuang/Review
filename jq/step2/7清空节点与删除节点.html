@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>562651</p>
+        <p>562651</p>
+        <p>562653</p>
+    </div>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script>
+
+        //克隆 深度赋值
+        //.clone(true)深度复制，和默认一样 .clone(false)不会复制事件
+        var $p=$("div").children("p:eq(2)").clone();
+        $("div").after($p);
+        //.after  .before   什么的前后插入什么对象
+        //清空节点    不能使用.html("")  因为内存泄漏
+        $("div").empty();
+        //删除节点
+        $("div").remove();
+    </script>
+</body>
+</html>

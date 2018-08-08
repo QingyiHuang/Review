@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    .basic{
+        font-size: 30px;
+    }
+    .basic{
+        font-size: 40px;
+    }
+    .hentai{
+        background: deeppink;
+    }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="aa">守护</li>
+        <li class="aa">守护</li>
+        <li class="aa">守护</li>
+        <li class="aa">守护</li>
+        <li class="aa">守护</li>
+    </ul>
+    <button id="btn">sssss</button>
+    <button id="btn2">22222</button>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script>
+    $(function(){
+        //改多个css样式可以传入json格式
+        $("li").css({
+        }).addClass("basic").removeClass("basic");
+        //获取css 隐式迭代，获取第一个li的样式
+        console.log($("li").css("fontFamily"));
+//toggleClass
+        $("#btn").click(function(){
+            if($("li").hasClass("hentai")){
+                $("li").removeClass("hentai");
+            }else{
+                $("li").addClass("hentai");
+            }
+        });
+        $("#btn2").click(function(){
+            $("li").toggleClass("hentai");
+        })
+    });
+    </script>
+    
+</body>
+</html>

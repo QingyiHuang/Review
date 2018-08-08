@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        display: none;
+        height: 200px;
+        margin-top: 20px;
+        background: deeppink;
+    }
+    </style>
+</head>
+<body>
+    <button id="btn">button</button>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <button id="btn2">aaa1</button>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script>
+//经典的 dom对象变jquery对象
+    $(document).ready(function(){
+//基本兼容了CSS1到CSS3所有的选择器，并且jQuery还添加了很多更加复杂的选择器。
+//注册事件,把on去掉
+        $("#btn").click(function(){
+            console.log("haha");
+            $("div").text("adasd").show();
+            
+        });
+        console.log($("div"));
+/**
+ * window.onload 等到页面所有资源加载完成踩执行
+ * $(function(){})等到html骨架加载完成就开始执行，就是dom加载完成就执行，并不会等待图片文件加载
+*/
+
+//jq对象就是使用jq方式获取到的元素就是jq对象   dom对象就是js方式获取到的元素 DOM对象
+//只有jq对象才能调用jq方法，jquery对象就是伪数组，里面放了dom对象
+    var btn2=document.getElementById("btn2");
+
+    //dom对象变jq
+    $(btn2).click(function(){
+        alert("haha");
+    });
+
+    //jq对象变dom 通过下标取出来就是dom对象了 
+    $(btn2)[0];
+    $(btn2).get(0);
+        });
+
+    </script>
+</body>
+</html>

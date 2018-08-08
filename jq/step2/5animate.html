@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+      <style>
+        div {
+          width: 100px;
+          height: 100px;
+          background-color: pink;
+          position: absolute;
+        }
+      </style>
+    </head>
+    <body>
+    <input type="button" value="开始">
+    <input type="button" value="结束">
+    <div></div>
+    
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script>
+        //.animate({键值对},动画执行速度，效果,回调函数)
+        //效果有"swing"秋千 "linear"匀速 默认秋千效果
+      $(function () {
+          $("input").eq(0).click(function(){
+              $("div").animate({
+                  left:800,
+                  top:800
+              },1000,"linear")
+          })
+      });
+    </script>
+    </body>
+    </html>

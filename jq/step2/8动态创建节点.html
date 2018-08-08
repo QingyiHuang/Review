@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id="txt" cols="30" rows="10"></textarea>
+    <ul>
+        
+    </ul>
+    <button id="btn">sssss</button>
+
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script>
+    $(function(){
+        $("#btn").click(function(){
+            //.trim()清除str两端的空白
+            if($("#txt").val().trim().length==0){
+                return;
+            }
+            //var $p=$('<li></li>').text($('#txt').val())
+            $("ul").prepend("<li>"+$('#txt').val()+"</li>")
+            $("#txt").val("");
+        })
+    });
+    </script>
+    
+</body>
+</html>
