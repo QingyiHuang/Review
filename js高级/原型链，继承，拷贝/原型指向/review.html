@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+        原型作用：
+        1共享数据，节省内存空间
+        2继承
+
+
+
+    <script>
+    //对象.bind(参数)改变对象中this的指向
+    /**
+    自定义构造函数创建对象会发生四件事情
+    1在内存中申请一块空闲的空间，存储创建的对象
+    2this就是当前实例化的对象
+    3设置对象中的属性和方法
+    4把创建后的对象返回
+
+    由于某些浏览器不支持__proto__
+    访问per.__proto__.way()不建议使用
+    使用per.way()自动去找构造函数原型对象中的这个方法
+    **/
+    //简单原型写法需要手动添加构造器，指向构造函数
+    Person.prototype={
+        name:"aa",
+        constructor:Person
+    }
+    //函数都是对象，对象不一定是函数
+    </script>
+</body>
+</html>

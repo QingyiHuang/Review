@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="dv"></div>
+    <script>
+      //原型链：实例对象 和原型对象之间的关系，通过 __proto__来联系的
+
+      //js中所有构造函数原型对象最终指向object
+    var dvObj=document.querySelector(".dv");
+    console.dir(dvObj);
+    //divobj.__proto__---->HTMLDivElement.prototype
+    //HTMLDivElement.prototype.__proto__--->HTMLElement.prototype
+    //HTMLElement.prototype.__proto__--->Element.prototype
+    //Element.prototype.__proto__---->Node.prototype
+    //Node.prototype.__proto__--->EventTarget.prototype
+    //EventTarget.prototype.__proto__---->Object.prototype
+    //Object.prototype中没有__proto__；
+    //所以是null
+    </script>
+</body>
+</html>

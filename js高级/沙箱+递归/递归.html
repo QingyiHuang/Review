@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数调用自己就是递归
+        //求n个数字的和，计算
+        function getSum(x){
+            if(x==1){
+                return 1;
+            }
+            return x+getSum(x-1);
+        }
+        console.log(getSum(10));
+        //求一个数字各个位置数上个和 123----1+2+3=6
+        function getEverySum(x){
+            if(x<10){
+                return x;
+            }
+            return x%10+getEverySum(x/10);
+        }
+        //斐波那契额 求x到1的斐波那契数列的和
+        function getFib(x){
+            if(x==1||x==2){
+                return 1;
+            }
+            return getFib(x-1)+getFib(x-2);
+        }
+        console.log(getFib(4));
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+    拷贝继承，把一个对象中的属性和方法直接复制
+    通过循环遍历赋值给另一个对象
+    这种方式叫做浅拷贝
+    
+    */
+    function Person(name,age,sex){
+        this.name=name;
+        this.age=age;
+        this.sex=sex;
+    }
+    Person.prototype.say=function(){
+        console.log("人类方法");
+    };
+    //person中有prototype，里面的say是该对象的属性/方法
+
+    var obj2={};
+    for(var key in Person.prototype){
+        obj2[key]=Person.prototype[key];
+    };
+    console.dir(obj2);
+    console.log(obj2);
+    obj2.say();
+    
+    </script>
+</body>
+</html>

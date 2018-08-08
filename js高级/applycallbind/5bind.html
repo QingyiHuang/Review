@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //bind 是复制，复制的时候改变this指向
+    //函数/方法名字.bind(obj,..,..)
+    //apply 和call是直接改变this 调用 
+    function f1(x,y){
+        console.log((x+y)+"========>"+this);
+    };
+    //复制一份函数,不传或者null this指向window
+    var ff=f1.bind(null,2,5);
+    ff();
+    //bind就是复制，参数可以在复制的时候穿进去，也可以在调用
+    //的时候传进去
+    console.log("---------------------------");
+    function Person(){
+
+    };
+    Person.prototype.say=function(){
+        console.log("say say"+this);
+    };
+    var per = new Person();
+    var ff1=f1.bind(per,10,2);
+    ff1();
+    console.dir(per);
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //通过对象，调用方法。产生随机数
+    function ShowRandom(){
+        this.number=parseInt(Math.random()*10+1);
+    };
+    ShowRandom.prototype.show1=function(){
+        //bind(this)的时候，直接把show2.this 替换了window
+        window.setInterval(this.show2.bind(this),1000);
+    };
+    ShowRandom.prototype.show2=function(){
+        console.log(this.number+"---"+this);
+    };
+var se =new ShowRandom();
+se.show2();
+//调用这个方法一次，不停产生随机数
+    </script>
+</body>
+</html>

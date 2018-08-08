@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //组合继承  原型继承+借用构造函数继承
+    function Person(name,age,sex){
+        this.name=name;
+        this.age=age;
+        this.sex=sex;
+    }
+    Person.prototype.say=function(){
+        console.log("人类方法");
+    };
+    //组合继承.call 改变原型对象
+    function Student(name,age,sex,score){
+        Person.call(this,name,age,sex);
+        this.score=score;
+    };
+    Student.prototype=new Person();
+    var xiaohua=new Student("小红",20,"男",100);
+    console.log(xiaohua.name,xiaohua.age,xiaohua.sex,xiaohua.score);
+    xiaohua.say();
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+    apply call 都可以改变this的指向
+    
+    */    
+        //////apply 和call 一模一样，如果有返回值，可以设置变量接收就好
+    ////////////////////////////////////////////////
+    function Person(age){
+        this.age=age;
+    };
+    Person.prototype.say=function(){
+        console.log("people"+this.age);
+    };
+    var per = new Person("10");
+    per.say();
+    function Child(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    var stu = new Child("小名","DVa");
+    per.say.apply(stu);
+    per.say.call(stu);
+    
+
+    </script>
+</body>
+</html>

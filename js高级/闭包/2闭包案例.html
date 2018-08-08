@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //闭包缓存数据
+        /*function f1(){
+            var num=10;
+            num++;
+            console.log(num);
+        }
+        f1();//11
+        f1();//11
+        f1();//11*/
+        function f2(){
+            var num=10;//下面函数调用
+            // 这个数据会缓存
+            //返回下面函数就可以在外面访问这个数据了
+            return function(){
+                num++;
+                return num;
+            }
+        };
+        var ff=f2();//调用f2里面的函数
+        console.log(ff());//11
+        console.log(ff());//12
+        console.log(ff());//13
+    </script>
+</body>
+</html>

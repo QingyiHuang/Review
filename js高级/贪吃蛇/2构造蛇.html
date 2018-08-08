@@ -120,6 +120,13 @@
                 });
                 food.init(map);
             }
+            //咬头
+            for(let i =1;i<this.body.length-1;i++){
+                if(this.body[0].x==this.body[i].x&&this.body[0].y==this.body[i].y){
+                    alert("do not eat yourself");
+                }
+            }
+
         }
         //删除蛇
         function removeSnake(){

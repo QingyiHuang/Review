@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //使用对象 使用对象中的属性和对象中的方法，使用
+    //对象就要现有构造函数
+    //构造函数4件事情
+    /**
+    1.在内存空间中申请一块空间
+    2.把this指向当前使用对象
+    3.为属性方法赋值
+    4.把实例对象进行返回
+    */
+
+    /**
+    实例对象与构造函数之间是间接关系
+    
+
+    //////////////原型链是一种关系
+    实例对象和原型之间的关系，关系是通过原型来联系的
+    __proto__
+    */
+
+    //原型的指向改变
+    //原型对象方法中的this与构造函数中的this都是指向实例对象
+    function Person(age){
+        this.age=age;
+    }
+    Person.prototype.eat=function(){
+        console.log(this);//指向实例对象
+        console.log("haha");
+    };
+
+    function Student(){
+
+    }
+    Student.prototype.study=function(){
+        console.log("code code");
+    };
+    Student.prototype={
+      eat:function(){
+          console.log("eat eat eat");
+      } 
+    };
+    var per=new Person(10);
+    per.eat();
+    </script>
+</body>
+</html>

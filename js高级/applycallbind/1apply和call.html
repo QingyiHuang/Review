@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //apply 和call 作用改变this的指向
+    //都可以让函数或者方法来调用，传入参数和函数自己调用的写法不一样
+    //但是效果是一样的
+    //apply(object,arr);
+    //call(object,...*)
+    
+    function f1(){
+        console.log(this);
+    };
+    f1();
+    //apply call也是函数的调用方式，
+    //如果两个方法中如果没有传入参数，或者传入的是null
+    //那么调用该方法的函数对象中的this就是默认window
+    f1.apply();
+    f1.call();
+    function f2(x){
+        console.log("这是window"+this+x);
+    };
+    var obj={
+        age:10,
+        sex:"1"
+    };
+    f2(10);
+    window.f2(10);
+    f2.apply(obj,[10]);
+    f2.call(obj,10);
+
+
+
+    </script>
+</body>
+</html>

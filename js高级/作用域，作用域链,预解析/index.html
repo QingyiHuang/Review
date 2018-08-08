@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //变量----》在函数中是局部变量
+    function bingo(){
+        var num=10;
+    }
+    bingo();
+    //console.log(num);报错
+    //作用域链子，变量使用，从里向外层层搜索。搜索到就使用
+    var num=10;//作用域链 级别0
+    function f1(){
+        var num=20;//作用域链 级别1
+        function f2(){
+            var num=30;//作用域链 级别2
+            console.log(num);
+        }
+        f2();
+    }
+    f1();
+    //预解析 ：浏览器在解析代码前，把变量的声明，和函数声明提升到所在作用域最上面
+    //如果提前执行函数
+    //函数声明 提前 就是整个一块提前。所以执行会执行
+    //函数表达式不会 提示undefined
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+    apply call 都可以改变this的指向,参数传递方式不一样
+    函数/方法名字.apply(obj,[.,.])
+                .call(obj,..,..)
+    */
+    function f1(x,y){
+        console.log((x+y)+"=======>"+this);
+        return "这是函数返回值";
+    }
+    /////////////////////////////////////////
+    f1(1,2);
+    //apply call 调用
+    var r1=f1.apply(null,[1,2]);//传null和没传 this 都是window
+    console.log(r1);
+    var r2=f1.call(null,1,2);//传null和没传 this 都是window
+    console.log(r2);
+    ///////////////////////////////////////////
+    console.log("------------------------------------");
+    var obj={
+        name:"小雨"
+    };
+    var r3=f1.apply(obj,[1,2]);//传入obj之后 this就是obj
+    console.log(r3);
+    var r4=f1.call(obj,1,2);//传入obj之后 this就是obj
+    console.log(r4);
+    ////////////////////////////////////////////
+    console.log("------------------------------------");
+    //方法改变this的指向
+    function Person(age){
+        this.age=age;
+    }
+    Person.prototype.say=function(x,y){
+        console.log(this+" sssss" +(x+y));
+    };
+    function Student(){
+
+    };
+    var per=new Person(10);
+    var stu=new Student();
+    per.say(1,1);
+    per.say.apply(stu,[3,500]);
+    per.say.call(stu,400,4);
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function Person(age){
+        this.age=age;
+    }
+    Person.prototype.eat=function(){
+        console.log("people");
+    };
+    function Student(sex){
+        this.sex=sex;
+    }
+    //学生的原型中添加方法--现在原型中添加方法
+    Student.prototype.study=function(){
+        console.log("study");
+    };
+    //改变原型对象的指向之后添加方法可以正常放进去
+    Student.prototype=new Person(10);
+    Student.prototype.play=function(){
+        console.log("play");
+    }//因为student prototype指向实例对象
+        //所以play方法添加到那个实例对象中
+    var stu=new Student("nan");
+    stu.eat();
+    stu.play();
+    console.dir(stu);
+    console.dir(Person);
+    console.dir(Student);
+//简单原型方法写法就是改变指向，所以需要自己添加constructor
+//所以所以再谢了简单原型方法之后，在新建原型方法 才会添加到原型对象上
+Person.prototype={
+    constructor:Person,
+    say:function(){
+        console.log("jhaha");
+    }
+};
+Person.prototype.pink=function(){
+    console.log("pink");
+}
+var per2=new Person(10);
+per2.pink();
+per2.say();
+per2.eat();//出错 38行已经改变了原型对象的指向为一个新对象
+    </script>
+</body>
+</html>

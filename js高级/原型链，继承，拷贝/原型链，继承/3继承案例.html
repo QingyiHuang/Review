@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function Animal(name,weight){
+        this.name=name;
+        this.weight=weight;
+    }
+    Animal.prototype.eat=function(){
+        console.log("can eat");
+    };
+    function Dog(color){
+        this.color=color;
+    }
+    Dog.prototype=new Animal("dog",11);
+    Dog.prototype.bite=function(){
+        console.log("can bite");
+    };
+    function erha(sex){
+        this.sex=sex;
+    }
+    erha.prototype=new Dog("white");
+    erha.prototype.play=function(){
+        console.log("play with master");
+    };
+    var dog1=new erha("雌性");
+    
+    dog1.play();
+    dog1.bite();
+    dog1.weight=20;
+    console.log(dog1.weight);
+    console.dir(dog1);
+    </script>
+</body>
+</html>

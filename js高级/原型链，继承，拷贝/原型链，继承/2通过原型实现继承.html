@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //js是一门基于对象的语言，而不是面向对象的语言
+        //因为js没有类（class）但是可以模拟，js会通过构造函数
+        //来模拟类（class）的概念
+        //面向对象的特征，封装 多态 继承
+        //继承，是为了实现数据共享
+        //多态，必须要先继承
+        //原型作用：数据共享，节省内存，实现继承
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+        };
+        Person.prototype.doing=function(){
+            console.log("每个人做不一样的事情")
+        };
+        function Student(score){
+            this.score=score;
+        };
+        //改变学生的指向即可
+        Student.prototype=new Person("小妹",10);
+        Student.prototype.study=function(){
+            console.log("student need study");
+        };
+        var stu=new Student(100);
+        console.dir(stu);
+    </script>
+</body>
+</html>

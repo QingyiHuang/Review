@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function Person(){
+
+    }
+    Person.prototype.eat=function(){
+        console.log("eat");
+    };
+    var per =new Person();
+    console.dir(per);
+    console.dir(Person);
+    //prototype对象中也有__proto__
+    //实例对象的__proto__指向构造函数的prototype
+    //prototype这个对象中的__proto__指向某个构造函数
+    //的prototype
+    console.log(Person.prototype.__proto__.__proto__);
+//等价于 Object.prototype.__proto__;
+
+    //构造函数的原型对象的__proto__指向Object
+    //Object.__proto__指向null.
+
+    </script>
+</body>
+</html>

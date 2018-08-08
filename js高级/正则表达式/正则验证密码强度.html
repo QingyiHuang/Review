@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #dv{
+        width: 300px;
+        height: 200px;
+        margin: 300px auto;
+        border: 1px solid deeppink;
+    }
+    .strengthLv0 {
+    height: 6px;
+    width: 120px;
+    border: 1px solid #ccc;
+    padding: 2px;
+  }
+
+  .strengthLv1 {
+    background: red;
+    height: 6px;
+    width: 40px;
+    border: 1px solid #ccc;
+    padding: 2px;
+  }
+
+  .strengthLv2 {
+    background: orange;
+    height: 6px;
+    width: 80px;
+    border: 1px solid #ccc;
+    padding: 2px;
+  }
+
+  .strengthLv3 {
+    background: green;
+    height: 6px;
+    width: 120px;
+    border: 1px solid #ccc;
+    padding: 2px;
+  }
+    </style>
+</head>
+<body>
+    <div id="dv">
+            <label for="pwd">password</label>
+            <input type="text" name="" id="pwd" maxlength="16">
+        <div>
+            <em>强度</em>
+            <em id="strength"></em>
+            <div id="strengthLevel" class="strengthLv0"></div>
+        </div>
+    </div>
+    <script>
+    function my$(id){
+        return document.getElementById(id);
+    }
+    /***
+     * 数字 字母 特殊符号就是3级密码
+     * 
+    */
+   var pwd=my$("pwd");
+   pwd.onkeyup=function(){
+        my$("strengthLevel").className="strengthLv"+(this.value.length>=6?getLevel(this.value) :0);
+   };
+   function getLevel(pwd){
+       var lvl=0;
+       if(/[0-9]/.test(pwd)){
+           lvl++;
+       };
+       if(/[a-zA-Z]/.test(pwd)){
+           lvl++;
+       };
+       if(/[^0-9a-zA-Z_]/.test(pwd)){
+           lvl++;
+       };
+       return lvl;
+   };
+    </script>
+</body>
+</html>

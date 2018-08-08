@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //反馈数组
+    /*/sfs/g全局模式*/
+    var str="你好，我的qq是2564654184，请拿走我的QQ，我的邮箱不告诉你，但是我的电话是1898984555";
+    var array=str.match(/\d{4,12}/g);
+    console.log(array);
+    //提取日期
+    var str1="2018/08/12";
+    //str1.match(/(\d{4})[/](\d{1,2})[/](\d{1,2})/)
+    /(\d{4})[/](\d{1,2})[/](\d{1,2})/g.exec(str1);
+    //自动拿到上一个正则的组 对象.$num
+    console.log(RegExp.$3);
+    var str3="大乌龟就是我，我就是守护天使，你的天使我就是成为你的啊我";
+    var str4=str3.replace(/我/g,"肥肥");
+    console.log(str4);
+    </script>
+    
+</body>
+</html>
