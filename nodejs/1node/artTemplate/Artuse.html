@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--浏览器中这么引用artTemplate-->
+    
+    <script src="./node_modules/art-template/lib/template-web.js"></script>
+    <script type="text/template" id="tp1">
+
+                    <li>hello {{name}}</li>
+                    <li>我叫 {{name2}}</li>
+                    <li>喜欢 {{doing}} 每一天，</li>
+                    <li>所以我喜欢打{{each games}} {{$value}}{{/each}}</li>
+
+    </script>
+    <script>
+    var ret = template('tp1',{
+        name:'moon',
+        name2:'hqy',
+        doing:"plausible",
+        games:['魔兽世界','csgo','舰队']
+    })
+    console.log(ret)
+    //模板引擎不关心内容
+    //{{}}mustach语法 八字胡语法
+    //template('script 标签 id',{对象})
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    事件代理，子节点事件由代理给父节点，依托于冒泡事件，点击内部 冒泡给外层，由外层代为执行该事件
+    <div>
+        <ul>
+            <li class="1">123</li>
+            <li class="2">123</li>
+            <li class="3">123</li>
+        </ul>
+        <button id=btn>add</button>
+    </div>
+    <script>
+    var ulObj=document.getElementsByTagName("ul")[0];
+    ulObj.onclick=function(e){
+        var e=e||window.event;
+        var target=e.target||e.srcElement;
+        if(target.nodeName.toLowerCase()=="li"){
+            target.style.background="hotpink";
+            switch(target.className){
+                case "1": alert("event1");break;
+                case "2": alert("event2");break;
+                case "3": alert("event3");break;
+            }
+        }
+    }
+    var btn = document.getElementById("btn");
+        btn .onclick = function(){
+            var liobj=document.createElement("li");
+            liobj.innerText="pink pig sister";
+            ulObj.appendChild(liobj);
+    }
+    </script>
+</body>
+</html>

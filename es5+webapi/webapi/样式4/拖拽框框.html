@@ -17,7 +17,7 @@
       margin: 0px;
     }
 
-    .login {
+    #login {
       width: 512px;
       position: absolute;
       border: #ebebeb solid 1px;
@@ -125,86 +125,7 @@
   </style>
 </head>
 <body>
-<div class="login-header"><a id="link" href="javascript:void(0);">点击，弹出登录框</a></div>
 
-<div id="login" class="login">
-    <div id="title" class="login-title">登录会员
-        <span><a id="closeBtn" href="javascript:void(0);" class="close-login">关闭</a></span></div>
-    <div class="login-input-content">
-        <div class="login-input">
-            <label>用户名：</label>
-            <input type="text" placeholder="请输入用户名" name="info[username]" id="username" class="list-input">
-        </div>
-        <div class="login-input">
-            <label>登录密码：</label>
-            <input type="password" placeholder="请输入登录密码" name="info[password]" id="password" class="list-input">
-        </div>
-    </div>
-    <div id="loginBtn" class="login-button"><a href="javascript:void(0);" id="login-button-submit">登录会员</a></div>
-</div><!--登录框-->
-
-<div id="bg" class="login-bg"></div><!--遮挡层-->
-
-
-<script>
-  function my$(id){
-      return document.getElementById(id);
-  }
-  var closeBtn=document.getElementsByClassName("login-title")[0].children[0];
-  //获取超链接,注册点击事件,显示登录框和遮挡层
-  my$("link").onclick = function () {
-    my$("login").style.display = "block";
-    my$("bg").style.display = "block";
-  };
-
-  //获取关闭,注册点击事件,隐藏登录框和遮挡层
-  closeBtn.onclick = function () {
-    
-    my$("login").style.display = "none";
-    my$("bg").style.display = "none";
- 
-  };
-//按下鼠标移动登录框
-my$("title").onmousedown=function(e){
-    console.log(e.clientX+"   ")
-    //offsetLeft带边框 clientX不带边框，获取鼠标横坐标-登录框距离左侧的x 得到space坐标
-    var spaceX=e.clientX-my$("login").offsetLeft;
-    var spaceY=e.clientY-my$("login").offsetTop;
-    //移动式事件，
-    document.onmousemove=function(e){
-        //新的鼠标坐标 - 鼠标到框的距离就是框的坐标  ，由于margin top 和margin left
-        //所以需要设置边框对盒子的影响
-        //盒子定位  应该是整个盒子，而整个盒子算了margin 的 所以要解决margin 的问题
-        
-        var x = e.clientX - spaceX+250;
-        var y = e.clientY - spaceY-140;
-        my$("login").style.left=x+"px";
-        my$("login").style.top=y+"px";
-    }
-}
-    my$("title").onmouseup=function(){
-        document.onmousemove=null;
-    }
-    
-
-</script>
-<script>
-
-  //点击超链接弹出登录框,点击页面的任何位置都可以关闭登录框
-  //  my$("link").onclick=function (e) {
-  //    my$("login").style.display="block";
-  //    //return false;
-  //    //e.preventDefault();
-  //    //上面的两个是阻止默认事件的
-  //    //下面的两个是阻止事件冒泡的
-  //    //window.event.cancelBubble=true;
-  //    e.stopPropagation();
-  //  };
-  //  document.onclick=function () {
-  //    my$("login").style.display="none";
-  //    console.log("隐藏了");
-  //  };
-</script>
 
 </body>
 </html>
