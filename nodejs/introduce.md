@@ -160,3 +160,27 @@ var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended:false}))
 
 app.use(bodyParser.json())
+
+
+
+## 项目步骤
+
+- 处理模板
+- 配置开放静态资源
+- 配置模板引擎
+- 简单路由，/students 渲染静态页面
+- 路由设计
+- 提取路由模块
+- 封装对文件数据操作的逻辑文件
+- 编写逻辑文件结构
+
+```javascript
+1查询所有 的api
+2单个查询 api
+3保存api
+4更新 api
+5删除 api
+```
+
+
+

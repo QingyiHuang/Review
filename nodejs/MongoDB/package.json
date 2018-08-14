@@ -1,0 +1,14 @@
+{
+  "name": "mongodb",
+  "version": "0.0.1",
+  "description": "use mongodb review it",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hqy",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^5.2.7"
+  }
+}

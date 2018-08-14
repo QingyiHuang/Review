@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv"></div>
+    <script>
+    //ajax 操作要用http协议
+    // XMLHttpRequest ajax是一套 提供核心内心API  XMLHttpRequest
+    //xhr 起到代理作用，发送请求接收响应
+    /*var xhr=new XMLHttpRequest()
+
+    xhr.open('GET','http://192.168.1.8:3000/data/a.json',false)
+    xhr.send(null)
+    xhr.onreadystatechange = function(){
+        console.log(1)
+        //状态改变就出发，
+        if (xhr.readyState==4 && xhr.status==200)
+        {
+            document.getElementById("myDiv").innerHTML=xhr.responseText;
+        }
+    }*/
+    //客户端永远不知道服务端合适才能返回我们需要的响应
+    //所以AJAX API采用事件的机制(通知)
+
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{
+		//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{
+		// IE6, IE5 浏览器执行代码
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+		}
+	}
+	xmlhttp.open("GET","http://127.0.0.1:3000/data/a.json",true);
+	xmlhttp.send(null);
+
+    </script>
+</body>
+</html>

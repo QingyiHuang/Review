@@ -1,0 +1,44 @@
+{
+  "fruits": [
+    "haha",
+    "hehe",
+    "gg"
+  ],
+  "students": [
+    {
+      "id": 2,
+      "name": "h2",
+      "gender": "1",
+      "age": 21,
+      "hobbies": "lovelive"
+    },
+    {
+      "id": 3,
+      "name": "h3",
+      "gender": "1",
+      "age": 21,
+      "hobbies": "lovelive"
+    },
+    {
+      "name": "我",
+      "gender": "1",
+      "age": "21",
+      "hobbies": "学习",
+      "id": 4
+    },
+    {
+      "name": "zzx",
+      "gender": "0",
+      "age": "20",
+      "hobbies": "腐女",
+      "id": 5
+    },
+    {
+      "name": "meinv",
+      "gender": "1",
+      "age": "22",
+      "hobbies": "学习",
+      "id": 6
+    }
+  ]
+}
