@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <span id="uname"></span>
+    <script>
+        var obj = {};
+        var inputObj=document.getElementById('input');
+        var spanObj = document.getElementById('uname');
+        Object.defineProperty(spanObj,"value",{
+            set:function(val){
+                //当obj属性改变的时候 set会触发
+                
+                spanObj.innerHTML=val;
+                inputObj.value=val;
+            },
+            get:function(){
+                //当obj某属性被读的时候 get会触发
+                console.log(get)
+            }
+        });
+       inputObj.addEventListener("keyup",function(e){
+            spanObj.innerText=e.target.value;
+        })
+    </script>
+</body>
+</html>

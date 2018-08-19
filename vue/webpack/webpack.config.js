@@ -33,12 +33,6 @@ module.exports = {
       exclude: /node_modules/ // 排除掉node_modules，优化打包速度
      },
      {
-       test: /\.san$/,
-       use: [
-         'san-loader'
-       ]
-     },
-     {
        test: /\.(png|svg|jpg|gif)$/,
        use:{
          loader:'file-loader',
@@ -48,21 +42,6 @@ module.exports = {
        }
      }
    ]
- },  
- devServer: {
-  contentBase: './dist',
-  host: 'localhost', // 默认是localhost
-  port: 3000, // 端口
-  open: false, // 自动打开浏览器
-  hot: true // 开启热更新
-},
-  resolve: {
-    // 解析模块请求的选项
-    // （不适用于对 loader 解析）
-      alias: {
-          san: process.env.NODE_ENV === 'production'
-              ? 'san/dist/san.js'
-              : 'san/dist/san.dev.js'
-      }
-  }
-};
+ } 
+
+
