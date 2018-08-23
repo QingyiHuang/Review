@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>客户关系</title>
+    <link rel="stylesheet" href="css/index.css">
+    <!--[if lte IE 8]>
+    <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+        <div id="login" class="login">
+                <div id="title" class="login-title">登录会员
+                    <span><a id="closeBtn" href="javascript:void(0);" class="close-login">关闭</a></span></div>
+                <div class="login-input-content">
+                    <div class="login-input">
+                        <label>用户名：</label>
+                        <input type="text" placeholder="请输入用户名" name="info[username]" id="username" class="list-input">
+                    </div>
+                    <div class="login-input">
+                        <label>登录密码：</label>
+                        <input type="password" placeholder="请输入登录密码" name="info[password]" id="password" class="list-input">
+                    </div>
+                </div>
+                <div id="loginBtn" class="login-button"><a href="javascript:void(0);" id="login-button-submit">登录会员</a></div>
+            </div><!--登录框-->
+            
+            <div id="bg" class="login-bg"></div><!--遮挡层-->
+<!--导航-->
+<nav class="qy_nav">
+    <div class="wrapper">
+        <a href="#" class="logo"></a>
+        <ul class="nav">
+            <li><a class="active" href="#">首页</a></li>
+            <li><a href="#">查看客户</a></li>
+            <li><a href="#">关于我们</a></li>
+        </ul>
+        <div class="other">
+            <ul>
+                <li><a href="#"></a></li>
+                <li><a href="#">注册</a></li>
+                <li><a href="#" id="link">登录</a></li>
+            </ul>
+            <span>本客户关系管理系统使用人数：2人</span>
+        </div>
+    </div>
+</nav>
+<!--展示-->
+
+<!--语音-->
+<section class="qy_sound">
+    <!--seo优化-->
+    <h1>客户关系管理</h1>
+    <div class="bg" data-stellar-background-ratio="0.3"></div>
+    <div class="content">
+        
+        <h2>客户-管理</h2>
+        <ul>
+            <li><p>用户信息以及  <a href="##"style="margin-left:10px">修改</a><a href="##"style="margin-left:10px">删除</a></p></li>
+        </ul>
+        
+    </div>
+</section>
+<!--文件-->
+<section class="qy_file">
+    <div class="bg" data-stellar-background-ratio="0.3"></div>
+    <div class="content">
+        <h2>这里可以自定义<br>这里可以自定义</h2>
+        <p>这里可以自定义，<br>这里可以自定义这里可以自定义。</p>
+        <div class="mac"></div>
+    </div>
+</section>
+<!--兴趣-->
+<section class="qy_interest">
+    <div class="bg"  data-stellar-background-ratio="0.3"></div>
+    <div class="content">
+        <div class="phone"></div>
+        <h2>这里可以自定义<br>这里可以自定义</h2>
+        <p>这里可以自定义，这里可以自定义，这里可以自定义<br>这里可以自定义这里可以自定义这里可以自定义</p>
+    </div>
+</section>
+<!--底部-->
+<footer class="qy_footer">
+    <div class="content">
+        <div class="plats">
+            <a class="plmb" href="#" target="_blank">手机客户</a>
+            <a class="plpc" href="#" target="_blank">PC客户</a>
+            <a class="plmac" href="#" target="_blank">os客户</a>
+            <a class="plpad" href="#" target="_blank">pad客户</a>
+        </div>
+        <p>Copyright © 1997- 2018 CQUPT. All Rights Reserved.</p>
+        <p>CQUPT 版权所有</p>
+    </div>
+
+
+    
+    
+    <script>
+      function my$(id){
+          return document.getElementById(id);
+      }
+      var closeBtn=document.getElementsByClassName("login-title")[0].children[0];
+      //获取超链接,注册点击事件,显示登录框和遮挡层
+      my$("link").onclick = function () {
+        my$("login").style.display = "block";
+        my$("bg").style.display = "block";
+      };
+    
+      //获取关闭,注册点击事件,隐藏登录框和遮挡层
+      closeBtn.onclick = function () {
+        
+        my$("login").style.display = "none";
+        my$("bg").style.display = "none";
+     
+      };
+    //按下鼠标移动登录框
+    my$("title").onmousedown=function(e){
+        console.log(e.clientX+"   ")
+        //offsetLeft带边框 clientX不带边框，获取鼠标横坐标-登录框距离左侧的x 得到space坐标
+        var spaceX=e.clientX-my$("login").offsetLeft;
+        var spaceY=e.clientY-my$("login").offsetTop;
+        //移动式事件，
+        document.onmousemove=function(e){
+            //新的鼠标坐标 - 鼠标到框的距离就是框的坐标  ，由于margin top 和margin left
+            //所以需要设置边框对盒子的影响
+            //盒子定位  应该是整个盒子，而整个盒子算了margin 的 所以要解决margin 的问题
+            
+            var x = e.clientX - spaceX+250;
+            var y = e.clientY - spaceY-140;
+            my$("login").style.left=x+"px";
+            my$("login").style.top=y+"px";
+        }
+    }
+        my$("title").onmouseup=function(){
+            document.onmousemove=null;
+        }
+        
+    
+    </script>
+    <script>
+    
+      //点击超链接弹出登录框,点击页面的任何位置都可以关闭登录框
+      //  my$("link").onclick=function (e) {
+      //    my$("login").style.display="block";
+      //    //return false;
+      //    //e.preventDefault();
+      //    //上面的两个是阻止默认事件的
+      //    //下面的两个是阻止事件冒泡的
+      //    //window.event.cancelBubble=true;
+      //    e.stopPropagation();
+      //  };
+      //  document.onclick=function () {
+      //    my$("login").style.display="none";
+      //    console.log("隐藏了");
+      //  };
+    </script>
+</footer>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.stellar.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

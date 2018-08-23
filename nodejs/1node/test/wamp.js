@@ -14,6 +14,6 @@ server.on('request',function(req,res){
     }else{
         res.end("no")
     }
-}).listen(3000,function(){
+}).listen(3001,function(){
     console.log("aphache")
 })

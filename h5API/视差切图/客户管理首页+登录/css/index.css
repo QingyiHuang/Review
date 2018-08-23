@@ -1,0 +1,399 @@
+/*============reset css===========*/
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 14px;
+    font-family: "Microsoft YaHei", sans-serif;
+    color: #333;
+}
+ul{
+    list-style: none;
+}
+a{
+    color: #333;
+    text-decoration: none;
+}
+/*============model css===========*/
+.qy_nav{
+    height: 150px;
+    background: url("../images/nav_bg.png") repeat-x;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.qy_nav .wrapper{
+    width: 1080px;
+    height: 75px;
+    margin: 0 auto;
+}
+.qy_nav .wrapper .logo{
+    width: 188px;
+    height: 75px;
+    background: url("../images/nav_brand.png") no-repeat center;
+    float: left;
+}
+.qy_nav .wrapper .nav{
+    float: left;
+}
+.qy_nav .wrapper .nav li{
+    float: left;
+    font-size: 18px;
+    line-height: 75px;
+    margin-left: 20px;
+}
+.qy_nav .wrapper .nav li a{
+    display: block;
+    padding: 0 20px;
+}
+.qy_nav .wrapper .nav li a.active,
+.qy_nav .wrapper .nav li a:hover{
+    background: #6d0303;
+    color:#fff;
+}
+
+.qy_nav .wrapper .register{
+    float: right;
+    height: 36px;
+    width: 96px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 16px;
+    background: #12b7f5;
+    color: #fff;
+    border-radius: 18px;
+    margin-top:19px;
+}
+.qy_nav .wrapper .other{
+    float: right;
+    width: 250px;
+    height: 75px;
+}
+.qy_nav .wrapper .other ul {
+    width: 250px;
+}
+.qy_nav .wrapper .other ul li{
+    float: right;
+    margin-left:40px;
+}
+.qy_nav .wrapper .other ul li a{
+    font-size: 14px;
+    text-shadow: 0 0 2px #333;
+    height: 50px;
+    line-height: 50px;
+}
+.qy_nav .wrapper .other span{
+    float: right;
+}
+
+
+
+.qy_banner{
+    height: 880px;
+    background: url("../images/banner-bg.jpg") no-repeat center top;
+    padding-top: 150px;
+}
+
+.qy_banner img{
+    display: block;
+    margin: 20px auto 0;
+}
+.qy_banner img:last-child{
+    width: 100%;
+    /*自适应  等比例缩放  图片有这个特殊效果  */
+}
+
+
+
+
+
+.qy_sound{
+
+}
+.qy_sound h1{
+    height: 300px;
+    background: url("../images/sound-text.png") no-repeat center/cover;
+    font-size: 0;
+}
+.qy_sound .bg{
+    height: 500px;
+    background: url("../images/sound-bg.jpg") no-repeat center/cover;
+}
+.qy_sound .content{
+    height: 500px;
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.qy_sound .content h2{
+    padding-top: 5px;
+    width: 500px;
+    text-align: center;
+    font-size: 30px;
+}
+.content a{
+    display: inline;
+}
+.qy_sound .content p{
+    padding-top: 10px;
+    text-align: left;
+    font-size: 18px;
+    text-shadow: 0 0 2px #333;
+}
+
+
+
+
+.qy_file{}
+.qy_file .bg{
+    height: 500px;
+    background: url("../images/file-bg.jpg") no-repeat center/cover;
+}
+.qy_file .content{
+    height: 500px;
+    width: 980px;
+    margin:  0 auto;
+    position: relative;
+}
+.qy_file .content .mac{
+    width: 600px;
+    height: 340px;
+    background: url("../images/file-mac.png") no-repeat center/cover;
+    position: absolute;
+    right: -60px;
+    top: 100px;
+}
+.qy_file .content h2{
+    float: left;
+    padding-top: 100px;
+    width: 500px;
+    text-align: left;
+    font-size: 40px;
+}
+.qy_file .content p{
+    padding-top: 50px;
+    float: left;
+    width: 500px;
+    text-align: left;
+    font-size: 18px;
+    text-shadow: 0 0 2px #333;
+}
+
+
+
+
+
+
+.qy_interest{}
+.qy_interest .bg{
+    height: 500px;
+    background: url("../images/interest-bg.jpg") no-repeat center/cover;
+}
+.qy_interest .content{
+    height: 500px;
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+}
+.qy_interest .content .phone{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 350px;
+    height: 500px;
+    background: url("../images/interest-phone.png") no-repeat center top/cover;
+}
+.qy_interest .content h2{
+    float: right;
+    padding-top: 100px;
+    width: 500px;
+    text-align: right;
+    font-size: 40px;
+}
+.qy_interest .content p{
+    padding-top: 50px;
+    float: right;
+    width: 500px;
+    text-align: right;
+    font-size: 18px;
+    text-shadow: 0 0 2px #333;
+}
+
+
+
+
+
+.qy_footer{
+    height: 250px;
+    background: #2a2a2a;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 50px;
+    color: #666;
+}
+.plats{
+    width: 800px;
+    height: 150px;
+    margin: 0 auto;
+    display: block;
+}
+.plats a {
+    float: left;
+    background: transparent url(../images/footer.png) no-repeat 10px 0;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    padding-top: 50px;
+    width: 80px;
+    margin: 0 60px;
+}
+.plats a:hover {
+    color: #12b7f5;
+}
+.plats a.plmb {
+    background-position: 0 0;
+}
+.plats a.plmb:hover {
+    background-position: 0 -93px;
+}
+.plats a.plpc {
+    background-position: -105px 0;
+}
+.plats a.plpc:hover {
+    background-position: -105px -93px;
+}
+.plats a.plmac {
+    background-position: -210px 0;
+}
+.plats a.plmac:hover {
+    background-position: -210px -93px;
+}
+.plats a.plpad {
+    background-position: -326px 0;
+}
+.plats a.plpad:hover {
+    background-position: -326px -93px;
+}
+
+.qy_sound .bg,.qy_file .bg,.qq_interest .bg{
+    background-attachment: fixed;
+}
+.login-header {
+    width: 100%;
+    text-align: center;
+    height: 30px;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  ul, li, ol, dl, dt, dd, div, p, span, h1, h2, h3, h4, h5, h6, a {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .login {
+    width: 512px;
+    position: absolute;
+    border: #ebebeb solid 1px;
+    height: 280px;
+    left: 50%;
+    right: 50%;
+    background: #ffffff;
+    box-shadow: 0px 0px 20px #ddd;
+    z-index: 9999;
+    margin-left: -250px;
+    margin-top: 140px;
+    display: none;
+  }
+
+  .login-title {
+    width: 100%;
+    margin: 10px 0px 0px 0px;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    font-size: 18px;
+    position: relative;
+    cursor: move;
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+  }
+
+  .login-input-content {
+    margin-top: 20px;
+  }
+
+  .login-button {
+    width: 50%;
+    margin: 30px auto 0px auto;
+    line-height: 40px;
+    font-size: 14px;
+    border: #ebebeb 1px solid;
+    text-align: center;
+  }
+
+  .login-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #000000;
+    filter: alpha(opacity=30);
+    -moz-opacity: 0.3;
+    -khtml-opacity: 0.3;
+    opacity: 0.3;
+    display: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  .login-button a {
+    display: block;
+  }
+
+  .login-input input.list-input {
+    float: left;
+    line-height: 35px;
+    height: 35px;
+    width: 350px;
+    border: #ebebeb 1px solid;
+    text-indent: 5px;
+  }
+
+  .login-input {
+    overflow: hidden;
+    margin: 0px 0px 20px 0px;
+  }
+
+  .login-input label {
+    float: left;
+    width: 90px;
+    padding-right: 10px;
+    text-align: right;
+    line-height: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .login-title span {
+    position: absolute;
+    font-size: 12px;
+    right: -20px;
+    top: -30px;
+    background: #ffffff;
+    border: #ebebeb solid 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
