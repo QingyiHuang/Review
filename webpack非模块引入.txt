@@ -1,0 +1,2 @@
+let test1 = require('exports-loader?变量!变量来源文件')
+console.log(变量)

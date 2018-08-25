@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+   .active{
+       background: firebrick;
+    }
+    /*这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕。*/
+    [v-cloak]{display:none}
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <input type="text" @keyup="haha($event)" v-model="value" @keydown.down.prevent="downlist" @keydown.up="uplist($event)">
+        <ul>
+            <li v-for='li in list' :key='index' :class="{active:$index==now}">
+                {{li}}
+            </li>
+        </ul>
+    </div>
+        
+    <script src="./vue.js"></script>
+    <script src="./vue-resource.js"></script>
+    <script>
+        window.onload=function(){
+            new Vue({
+            el:'#app',
+            data:{
+                    value:'',
+                    list:[],
+                    now:-1
+            },
+            methods:{
+                haha:function(e){
+                    if(e.keyCode===38 || e.keyCode===40){
+                        return;//如果按上下就停止发送请求
+                    }else if(e.keyCode===13){
+                        window.open('https://www.baidu.com/s?wd='+this.value)
+                        this.value=''
+                    }
+                    this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+                    {wd:this.value},{
+                        jsonp:'cb'//callback的名字,默认名字为callback
+                    }
+                    ).then(function(res){
+                        this.list=res.data.s
+                    })
+
+                },
+                downlist:function(){
+                    
+                    if(this.now>=this.list.length-1){
+                        this.now=-1
+                    }
+                    this.now++;
+                    this.value=this.list[this.now]
+                },
+                uplist:function(e){
+                    e.preventDefault()//让光标不乱动
+                    
+                    if(this.now<=0){
+                        this.now=this.list.length
+                    }
+                    this.now--;
+                    this.value=this.list[this.now]
+                }
+            }
+        })
+    }   
+
+    </script>
+</body>
+</html>
