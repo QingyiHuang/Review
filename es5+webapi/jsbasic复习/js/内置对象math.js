@@ -91,3 +91,11 @@ window.onload=function(){
     };
     car.play();
 }
+
+
+function(a,b){
+	for(var i=0; i<a.length;i++){
+		if(a.charCodeAt(i)==b.charCodeAt(i)) continue;
+		return a.charCodeAt(i) - b.charCodeAt(i);
+	}
+}

@@ -1,0 +1,4 @@
+
+		response.setHeader("Access-Control-Allow-Headers", "accept, content-type");
+		response.setHeader("Access-Control-Allow-Method", "POST");
+		response.setHeader("Access-Control-Allow-Origin", "http://192.168.8.36")

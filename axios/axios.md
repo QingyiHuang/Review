@@ -73,7 +73,19 @@ axios post请求 除非运用vue-cli  可改config下的一个poxy文件
 > }
 >
 > }
->
+
+
+
+1. ​		response.setHeader("Access-Control-Allow-Headers", "accept, content-type");
+
+2. 
+
+   ​		response.setHeader("Access-Control-Allow-Method", "POST");
+
+3. 
+
+   ​		response.setHeader("Access-Control-Allow-Origin", "http://192.168.8.36")
+
 > 第一行的`'/api'`指的是虚拟路径 target指的是目标地址，也就是实际api的地址 pathRewrite规则重写
 >
 > 然后在代码页面修改一下请求地址

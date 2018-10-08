@@ -15,7 +15,17 @@ for(let i of s){
     console.log(i)
 }
 
-
+function findLength(str){
+  var s = new Set();
+  var strArray = str.split("")
+  strArray.forEach(element => s.add(element))
+  let arr = [...s]
+  var str2=''
+  for (let i of arr)
+  {str2 += i}
+  console.log(str2.length)
+}
+输入第一行一个整数，后面m行 每行m个整数（取0或1）
 /**
  * 
  Set 结构的实例有以下属性。

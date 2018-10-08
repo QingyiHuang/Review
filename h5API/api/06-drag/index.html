@@ -67,20 +67,20 @@
 		container.addEventListener('dragover', function (e) {
 			this.style.backgroundColor = 'yellow';
             console.log('目标dragover');
-			e.preventDefault();
+			// e.preventDefault();
 		});
 
 		//在目标元素松开
 		container.addEventListener('drop', function (e) {
 			this.style.backgroundColor = 'black';
 			console.log('目标drop');
-			e.preventDefault();
+			// e.preventDefault();
 		});
         //在目标元素离开
         container.addEventListener('dragleave', function (e) {
             this.style.backgroundColor = '';
             console.log('目标dragleave');
-            e.preventDefault();
+            // e.preventDefault();
         });
 	</script>
 </body>
