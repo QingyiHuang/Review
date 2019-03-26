@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //(function(a){alert(a)})("aa")//沙箱
+    (function(){
+        //  1.左右两边必须一样；右边得是个东西
+        //  2.必须定义和赋值同步完成
+        let {a,b,c} = {a:1,b:2,c:3}
+        console.log(a+"this is a"+b+"this is b"+ c +"this is c")
+    //结构赋值，粒度问题
+        let [d,e,f] = [12,{a: {n1: 2,n2: 2},b: 12,c: 88}, 55]
+        console.log(d+"     "+e+"     "+f)
+        let [g,{h,i,j},k] = [12,{h: {n1: 2,n2: 2},i: 12,j: 88}, 55]
+        console.log(g+"     "+h+"     "+i+"     "+j+"     "+k)
+    })()
+</script>
+</body>
+</html>
